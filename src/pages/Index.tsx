@@ -2,20 +2,10 @@
 import { useState, useEffect } from "react";
 import Sidebar from "@/components/Sidebar";
 import { CategoryContent } from "@/components/CategoryContent";
-import { AudioPlayer } from "@/components/AudioPlayer";
-import { Category, getFeaturedRecordings, Recording, categoryNames } from "@/data/recordings";
+import { Category, categoryNames } from "@/data/recordings";
 
 const Index = () => {
   const [activeCategory, setActiveCategory] = useState<Category>("stress-anxiety");
-  const [featuredRecordings, setFeaturedRecordings] = useState<Recording[]>([]);
-  const [selectedFeatured, setSelectedFeatured] = useState<Recording | null>(null);
-
-  useEffect(() => {
-    // Get featured recordings
-    const featured = getFeaturedRecordings();
-    setFeaturedRecordings(featured);
-    setSelectedFeatured(featured[0] || null);
-  }, []);
 
   const handleCategoryChange = (category: Category) => {
     setActiveCategory(category);
@@ -51,6 +41,7 @@ const Index = () => {
           
           {/* Category Content */}
           <main>
+            <h2 className="text-2xl font-semibold text-calm-800 mb-6">Featured Recording</h2>
             <CategoryContent category={activeCategory} />
             
             {/* Ad Space (Side) */}
