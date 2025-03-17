@@ -53,10 +53,10 @@ export const recordings: Recording[] = [
   },
   {
     id: "4",
-    title: "Confidence Booster",
-    description: "Build unshakeable confidence and self-esteem with this powerful hypnosis recording.",
-    duration: "22:15",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-raising-me-higher-34.mp3",
+    title: "Personal Confidence Booster",
+    description: "Build unshakeable confidence and self-esteem with this powerful custom hypnosis recording.",
+    duration: "30:00",
+    audioSrc: "https://drive.google.com/uc?export=download&id=1chBUp0d-gg3RD73VeHo3NH9Np22-tKlK",
     category: "confidence",
     featured: true
   },
