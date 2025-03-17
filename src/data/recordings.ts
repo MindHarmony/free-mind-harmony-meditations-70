@@ -7,6 +7,8 @@ export type Recording = {
   audioSrc: string;
   category: Category;
   featured?: boolean;
+  embedType?: "soundcloud";
+  embedSrc?: string;
 };
 
 export type Category = 
@@ -28,10 +30,12 @@ export const categoryNames: Record<Category, string> = {
 export const recordings: Recording[] = [
   {
     id: "1",
-    title: "Calming Ocean Waves",
-    description: "Release stress and anxiety with this gentle hypnosis session featuring soothing ocean waves.",
-    duration: "23:45",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3",
+    title: "Peace In The Now",
+    description: "Release stress and anxiety with this gentle hypnosis session that guides you to find peace in the present moment.",
+    duration: "18:24",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3", // Fallback audio
+    embedType: "soundcloud",
+    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/carla-545924453/peace-in-the-now/s-UimZw0AL1H1&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false",
     category: "stress-anxiety",
     featured: true
   },

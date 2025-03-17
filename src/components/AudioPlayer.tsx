@@ -19,6 +19,39 @@ export const AudioPlayer = ({ recording, isCompact = false }: AudioPlayerProps) 
   const audioRef = useRef<HTMLAudioElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
   
+  // If this is a SoundCloud embed, render it differently
+  if (recording.embedType === "soundcloud" && recording.embedSrc) {
+    return (
+      <div className={cn(
+        "audio-player w-full p-4",
+        isCompact ? "rounded-lg" : "rounded-xl"
+      )}>
+        <div className="mb-3">
+          <div className={cn(
+            "font-medium text-calm-900",
+            isCompact ? "text-sm" : "text-base"
+          )}>
+            {recording.title}
+          </div>
+          <div className="text-xs text-calm-500 mt-1">
+            {recording.duration}
+          </div>
+        </div>
+        
+        <div className="w-full rounded-lg overflow-hidden" style={{ height: "160px" }}>
+          <iframe 
+            width="100%" 
+            height="100%" 
+            scrolling="no" 
+            frameBorder="no" 
+            src={recording.embedSrc}
+            title={recording.title}
+          ></iframe>
+        </div>
+      </div>
+    );
+  }
+  
   useEffect(() => {
     // Reset state when recording changes
     setIsPlaying(false);
