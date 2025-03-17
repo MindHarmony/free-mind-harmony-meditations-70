@@ -27,7 +27,7 @@ const Index = () => {
               {categoryNames[activeCategory]}
             </h1>
             <p className="text-calm-600 mt-2">
-              Free hypnosis recordings to help you achieve mental balance and harmony
+              Click on the recording below to enjoy your free meditation to achieve mental balance and harmony
             </p>
           </header>
 
@@ -41,7 +41,6 @@ const Index = () => {
           
           {/* Category Content */}
           <main>
-            <h2 className="text-2xl font-semibold text-calm-800 mb-6">Featured Recording</h2>
             <CategoryContent category={activeCategory} />
             
             {/* Ad Space (Side) */}
