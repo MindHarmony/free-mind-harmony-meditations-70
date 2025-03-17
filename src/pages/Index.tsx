@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Sidebar from "@/components/Sidebar";
 import { CategoryContent } from "@/components/CategoryContent";
 import { Category, categoryNames } from "@/data/recordings";
@@ -55,6 +56,11 @@ const Index = () => {
           <footer className="mt-10 pt-6 border-t border-calm-100 text-center text-sm text-calm-500">
             <p>© 2023 Mind Harmony. All rights reserved.</p>
             <p className="mt-1">Free hypnosis recordings for personal development.</p>
+            <div className="mt-3">
+              <Link to="/privacy" className="text-trust-500 hover:text-trust-600 transition-colors">
+                Privacy Policy
+              </Link>
+            </div>
           </footer>
         </div>
       </div>
