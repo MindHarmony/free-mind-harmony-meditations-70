@@ -35,7 +35,7 @@ export const recordings: Recording[] = [
     duration: "18:24",
     audioSrc: "https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3", // Fallback audio
     embedType: "soundcloud",
-    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1795392041%3Fsecret_token%3Ds-UimZw0AL1H1&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
+    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2051337652%3Fsecret_token%3Ds-UimZw0AL1H1&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
     category: "stress-anxiety",
     featured: true
   },
