@@ -20,7 +20,7 @@ interface CategoryItem {
 export const Sidebar = ({ 
   activeCategory, 
   onCategoryChange, 
-  logoUrl = "https://placehold.co/200x100/trust/white?text=Mind+Harmony" 
+  logoUrl 
 }: SidebarProps) => {
   const isMobile = useIsMobile();
   const [isCollapsed, setIsCollapsed] = useState(isMobile);
@@ -59,6 +59,26 @@ export const Sidebar = ({
     }
   ];
 
+  // Helper function to render logo
+  const renderLogo = () => {
+    if (imageError || !logoUrl) {
+      return (
+        <div className="h-8 bg-trust-100 px-2 rounded flex items-center justify-center">
+          <span className="text-trust-700 font-semibold">Mind Harmony</span>
+        </div>
+      );
+    }
+    
+    return (
+      <img 
+        src={logoUrl} 
+        alt="Mind Harmony" 
+        className="h-8 w-auto object-contain"
+        onError={() => setImageError(true)}
+      />
+    );
+  };
+
   return (
     <div
       className={cn(
@@ -69,15 +89,8 @@ export const Sidebar = ({
       <div className="px-3 mb-6">
         {!isCollapsed ? (
           <div className="flex items-center">
-            {!imageError && (
-              <img 
-                src={logoUrl} 
-                alt="Mind Harmony" 
-                className="h-8 w-auto mr-2"
-                onError={() => setImageError(true)}
-              />
-            )}
-            <h1 className="font-semibold text-trust-800 text-lg">
+            {renderLogo()}
+            <h1 className="ml-2 font-semibold text-trust-800 text-lg">
               Mind Harmony
             </h1>
           </div>

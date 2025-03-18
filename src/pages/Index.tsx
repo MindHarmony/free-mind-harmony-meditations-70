@@ -10,8 +10,11 @@ const Index = () => {
   const [activeCategory, setActiveCategory] = useState<Category>("stress-anxiety");
   const isMobile = useIsMobile();
   
-  // Converting Google Drive link to direct image URL
-  const logoUrl = "https://drive.google.com/uc?export=view&id=1HnDAR0Obump90C9OaR8EPkVJiZR3GmmH";
+  // Convert from a Google Drive sharing link to a direct image URL
+  // Format: https://drive.google.com/file/d/FILE_ID/view?usp=sharing
+  // to: https://drive.google.com/uc?export=view&id=FILE_ID
+  const googleDriveId = "1HnDAR0Obump90C9OaR8EPkVJiZR3GmmH";
+  const logoUrl = `https://drive.google.com/uc?export=view&id=${googleDriveId}`;
 
   const handleCategoryChange = (category: Category) => {
     setActiveCategory(category);
