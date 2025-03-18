@@ -7,6 +7,9 @@ import { Category, categoryNames } from "@/data/recordings";
 
 const Index = () => {
   const [activeCategory, setActiveCategory] = useState<Category>("stress-anxiety");
+  
+  // Converting Google Drive link to direct image URL
+  const logoUrl = "https://drive.google.com/uc?export=view&id=1HnDAR0Obump90C9OaR8EPkVJiZR3GmmH";
 
   const handleCategoryChange = (category: Category) => {
     setActiveCategory(category);
@@ -17,7 +20,8 @@ const Index = () => {
       {/* Sidebar */}
       <Sidebar 
         activeCategory={activeCategory} 
-        onCategoryChange={handleCategoryChange} 
+        onCategoryChange={handleCategoryChange}
+        logoUrl={logoUrl}
       />
       
       {/* Main Content */}
