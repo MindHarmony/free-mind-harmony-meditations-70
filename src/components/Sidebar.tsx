@@ -66,8 +66,11 @@ export const Sidebar = ({
       <div className="px-3 mb-6">
         {!isCollapsed ? (
           <div className="flex items-center">
-            <div className="h-8 bg-trust-100 px-3 rounded flex items-center justify-center">
-              <span className="text-trust-700 font-semibold">MH</span>
+            <div className="h-9 w-9 bg-trust-100 rounded-full flex items-center justify-center overflow-hidden">
+              <span className="text-trust-700 font-semibold text-lg">MH</span>
+              {/* To use a custom logo, upload an image to the project and replace the span above with:
+                 <img src="/your-logo.png" alt="Mind Harmony" className="h-full w-full object-contain" /> 
+              */}
             </div>
             <h1 className="ml-2 font-semibold text-trust-800 text-lg">
               Mind Harmony
@@ -75,8 +78,11 @@ export const Sidebar = ({
           </div>
         ) : (
           <div className="flex justify-center">
-            <div className="w-10 h-10 bg-trust-100 rounded-full flex items-center justify-center">
-              <span className="text-trust-700 font-semibold">M</span>
+            <div className="w-10 h-10 bg-trust-100 rounded-full flex items-center justify-center overflow-hidden">
+              <span className="text-trust-700 font-semibold text-lg">M</span>
+              {/* To use a custom logo, upload an image to the project and replace the span above with:
+                 <img src="/your-logo.png" alt="Mind Harmony" className="h-full w-full object-contain" /> 
+              */}
             </div>
           </div>
         )}
