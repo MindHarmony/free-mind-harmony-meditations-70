@@ -1,8 +1,9 @@
 
-import { useState } from "react";
-import { HeartPulse, Star, Moon, Shield, User } from "lucide-react";
+import { useState, useEffect } from "react";
+import { HeartPulse, Star, Moon, Shield, User, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Category, categoryNames } from "@/data/recordings";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface SidebarProps {
   activeCategory: Category;
@@ -21,8 +22,14 @@ export const Sidebar = ({
   onCategoryChange, 
   logoUrl = "https://placehold.co/200x100/trust/white?text=Mind+Harmony" 
 }: SidebarProps) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const isMobile = useIsMobile();
+  const [isCollapsed, setIsCollapsed] = useState(isMobile);
   const [imageError, setImageError] = useState(false);
+
+  // Automatically collapse sidebar on mobile
+  useEffect(() => {
+    setIsCollapsed(isMobile);
+  }, [isMobile]);
 
   const categories: CategoryItem[] = [
     {
@@ -55,22 +62,22 @@ export const Sidebar = ({
   return (
     <div
       className={cn(
-        "h-screen bg-sidebar py-6 border-r border-sidebar-border transition-all duration-300 ease-in-out",
-        isCollapsed ? "w-20" : "w-64"
+        "h-screen bg-sidebar py-3 border-r border-sidebar-border transition-all duration-300 ease-in-out",
+        isCollapsed ? "w-16" : "w-64"
       )}
     >
-      <div className="px-4 mb-8">
+      <div className="px-3 mb-6">
         {!isCollapsed ? (
           <div className="flex items-center">
             {!imageError && (
               <img 
                 src={logoUrl} 
                 alt="Mind Harmony" 
-                className="h-10 w-auto mr-2"
+                className="h-8 w-auto mr-2"
                 onError={() => setImageError(true)}
               />
             )}
-            <h1 className="font-semibold text-trust-800 text-xl">
+            <h1 className="font-semibold text-trust-800 text-lg">
               Mind Harmony
             </h1>
           </div>
@@ -83,23 +90,25 @@ export const Sidebar = ({
         )}
         <button 
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="mt-4 text-xs text-calm-500 hover:text-trust-600 transition-colors w-full text-center"
+          className="mt-3 text-xs text-calm-500 hover:text-trust-600 transition-colors w-full text-center"
+          aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
-          {isCollapsed ? "Expand" : "Collapse"}
+          {isCollapsed ? <Menu className="mx-auto h-4 w-4" /> : "Collapse"}
         </button>
       </div>
 
-      <nav className="space-y-1 px-3">
+      <nav className="space-y-1 px-2">
         {categories.map((category) => (
           <button
             key={category.id}
             onClick={() => onCategoryChange(category.id)}
             className={cn(
-              "w-full flex items-center px-3 py-3 rounded-lg transition-all duration-200 group",
+              "w-full flex items-center px-2 py-2 rounded-lg transition-all duration-200 group",
               activeCategory === category.id 
                 ? "bg-sidebar-accent text-sidebar-primary font-medium" 
                 : "text-calm-600 hover:bg-trust-50 hover:text-trust-700"
             )}
+            aria-label={`${category.name} category`}
           >
             <span className="flex-shrink-0">{category.icon}</span>
             <span 
@@ -114,17 +123,14 @@ export const Sidebar = ({
         ))}
       </nav>
 
-      <div className="absolute bottom-6 left-0 right-0 px-4">
-        <div 
-          className={cn(
-            "text-center text-xs text-calm-500",
-            isCollapsed ? "opacity-0" : "opacity-100 transition-opacity duration-300"
-          )}
-        >
-          <p>© 2023 Mind Harmony</p>
-          <p className="mt-1">All rights reserved</p>
+      {!isCollapsed && (
+        <div className="absolute bottom-6 left-0 right-0 px-4">
+          <div className="text-center text-xs text-calm-500">
+            <p>© 2023 Mind Harmony</p>
+            <p className="mt-1">All rights reserved</p>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
