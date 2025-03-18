@@ -18,11 +18,11 @@ export type Category =
   | "personal-growth";
 
 export const categoryNames: Record<Category, string> = {
-  "stress-anxiety": "Stress & Anxiety Relief",
-  "confidence": "Confidence & Self Esteem",
+  "stress-anxiety": "Anxiety",
+  "confidence": "Confidence",
   "sleep": "Sleep & Insomnia",
-  "anti-bullying": "Teenage Anti-Bullying & Resilience",
-  "personal-growth": "Be The Person You Want To Be"
+  "anti-bullying": "Anti-Bullying",
+  "personal-growth": "Future Self Visualization"
 };
 
 // Sample recordings data
