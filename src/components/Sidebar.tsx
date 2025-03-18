@@ -67,9 +67,15 @@ export const Sidebar = ({
         {!isCollapsed ? (
           <div className="flex items-center">
             <div className="h-9 w-9 bg-trust-100 rounded-full flex items-center justify-center overflow-hidden">
+              {/* LOGO: Replace this text with your logo image once uploaded */}
               <span className="text-trust-700 font-semibold text-lg">MH</span>
-              {/* To use a custom logo, upload an image to the project and replace the span above with:
-                 <img src="/your-logo.png" alt="Mind Harmony" className="h-full w-full object-contain" /> 
+              {/* 
+              To use a custom logo:
+              1. Upload your image to Lovable using the upload button or drag and drop
+              2. The image will be stored in the "public" folder
+              3. Then uncomment and use this code (replace your-logo.png with your actual image name):
+              
+              <img src="/lovable-uploads/5ae2b16c-0fa2-4e46-8ec3-63160dd50512.png" alt="Mind Harmony" className="h-full w-full object-contain" />
               */}
             </div>
             <h1 className="ml-2 font-semibold text-trust-800 text-lg">
@@ -79,9 +85,15 @@ export const Sidebar = ({
         ) : (
           <div className="flex justify-center">
             <div className="w-10 h-10 bg-trust-100 rounded-full flex items-center justify-center overflow-hidden">
+              {/* LOGO: Replace this text with your logo image once uploaded */}
               <span className="text-trust-700 font-semibold text-lg">M</span>
-              {/* To use a custom logo, upload an image to the project and replace the span above with:
-                 <img src="/your-logo.png" alt="Mind Harmony" className="h-full w-full object-contain" /> 
+              {/* 
+              To use a custom logo:
+              1. Upload your image to Lovable using the upload button or drag and drop
+              2. The image will be stored in the "public" folder  
+              3. Then uncomment and use this code (replace your-logo.png with your actual image name):
+              
+              <img src="/lovable-uploads/5ae2b16c-0fa2-4e46-8ec3-63160dd50512.png" alt="Mind Harmony" className="h-full w-full object-contain" />
               */}
             </div>
           </div>
