@@ -54,15 +54,23 @@ export const Sidebar = ({ activeCategory, onCategoryChange }: SidebarProps) => {
       )}
     >
       <div className="px-4 mb-8">
-        <h1 
-          className={cn(
-            "font-semibold text-trust-800 transition-opacity duration-300",
-            isCollapsed ? "text-center text-sm opacity-0 h-0" : "text-xl opacity-100"
-          )}
-        >
-          Mind Harmony
-        </h1>
-        {isCollapsed && (
+        {!isCollapsed ? (
+          <div className="flex items-center">
+            {/* Logo placeholder - replace the src with your uploaded logo */}
+            <img 
+              src="/logo.png" 
+              alt="Mind Harmony" 
+              className="h-10 w-auto mr-2"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+              }}
+            />
+            <h1 className="font-semibold text-trust-800 text-xl">
+              Mind Harmony
+            </h1>
+          </div>
+        ) : (
           <div className="flex justify-center">
             <div className="w-10 h-10 bg-trust-100 rounded-full flex items-center justify-center">
               <span className="text-trust-700 font-semibold">M</span>
