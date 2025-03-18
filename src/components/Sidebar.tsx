@@ -7,6 +7,7 @@ import { Category, categoryNames } from "@/data/recordings";
 interface SidebarProps {
   activeCategory: Category;
   onCategoryChange: (category: Category) => void;
+  logoUrl?: string;
 }
 
 interface CategoryItem {
@@ -15,8 +16,13 @@ interface CategoryItem {
   icon: React.ReactNode;
 }
 
-export const Sidebar = ({ activeCategory, onCategoryChange }: SidebarProps) => {
+export const Sidebar = ({ 
+  activeCategory, 
+  onCategoryChange, 
+  logoUrl = "https://placehold.co/200x100/trust/white?text=Mind+Harmony" 
+}: SidebarProps) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const categories: CategoryItem[] = [
     {
@@ -56,16 +62,14 @@ export const Sidebar = ({ activeCategory, onCategoryChange }: SidebarProps) => {
       <div className="px-4 mb-8">
         {!isCollapsed ? (
           <div className="flex items-center">
-            {/* Logo placeholder - replace the src with your uploaded logo */}
-            <img 
-              src="/logo.png" 
-              alt="Mind Harmony" 
-              className="h-10 w-auto mr-2"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-              }}
-            />
+            {!imageError && (
+              <img 
+                src={logoUrl} 
+                alt="Mind Harmony" 
+                className="h-10 w-auto mr-2"
+                onError={() => setImageError(true)}
+              />
+            )}
             <h1 className="font-semibold text-trust-800 text-xl">
               Mind Harmony
             </h1>
