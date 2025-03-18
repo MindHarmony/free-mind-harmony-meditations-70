@@ -1,4 +1,3 @@
-
 export type Recording = {
   id: string;
   title: string;
@@ -62,7 +61,9 @@ export const recordings: Recording[] = [
     duration: "30:00",
     audioSrc: "https://drive.google.com/uc?export=download&id=1chBUp0d-gg3RD73VeHo3NH9Np22-tKlK",
     category: "confidence",
-    featured: true
+    featured: true,
+    embedType: "soundcloud",
+    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2056850564&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
   },
   {
     id: "5",
