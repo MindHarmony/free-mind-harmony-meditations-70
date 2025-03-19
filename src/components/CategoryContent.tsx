@@ -42,7 +42,7 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
   return (
     <div className="animate-fade-in">
       {recording && (
-        <div className="fade-in">
+        <div className="fade-in space-y-6">
           <div className="bg-white rounded-2xl shadow-md p-6">
             <div className="mb-5">
               <div className="flex justify-between items-start mb-2">
@@ -56,6 +56,21 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
             </div>
             <AudioPlayer recording={recording} />
           </div>
+          
+          {/* Affiliate Banner */}
+          <a 
+            href="https://www.thecentreforhealing.com/a/43957/EFJWNTPz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full rounded-xl overflow-hidden shadow-md transition-transform hover:shadow-lg hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-trust-500"
+            aria-label="Visit The Centre for Healing"
+          >
+            <img 
+              src="/lovable-uploads/6cb5cd17-484c-4d25-859e-ff5b1d0c0bf6.png" 
+              alt="Share your Light - Become a qualified healer & therapist through The Centre for Healing" 
+              className="w-full h-auto"
+            />
+          </a>
         </div>
       )}
     </div>
