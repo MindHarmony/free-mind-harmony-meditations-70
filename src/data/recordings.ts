@@ -1,4 +1,3 @@
-
 export type Recording = {
   id: string;
   title: string;
@@ -82,12 +81,13 @@ export const recordings: Recording[] = [
     audioSrc: "https://assets.mixkit.co/music/preview/mixkit-driving-ambition-32.mp3",
     category: "confidence"
   },
+  // Update Sleep category recordings with reliable sources
   {
     id: "7",
     title: "Deep Sleep Induction",
     description: "Fall asleep quickly and enjoy restful sleep all night with this sleep hypnosis.",
     duration: "30:10",
-    audioSrc: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Yusuke_Tsutsumi/Zen_Music/Yusuke_Tsutsumi_-_01_-_Letting_Go.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-sleep-walker-580.mp3", // Updated to Mixkit source
     category: "sleep",
     featured: true
   },
@@ -96,7 +96,7 @@ export const recordings: Recording[] = [
     title: "Insomnia Relief",
     description: "Break the cycle of insomnia and train your mind for healthy sleep patterns.",
     duration: "27:40",
-    audioSrc: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/Kai_Engel/Satin/Kai_Engel_-_06_-_Murmuration.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-relaxing-in-nature-522.mp3", // Updated to Mixkit source
     category: "sleep"
   },
   {
@@ -104,15 +104,16 @@ export const recordings: Recording[] = [
     title: "Peaceful Night's Rest",
     description: "Release the day's tension and prepare your mind and body for rejuvenating sleep.",
     duration: "25:15",
-    audioSrc: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/WFMU/Broke_For_Free/Directionless_EP/Broke_For_Free_-_01_-_Night_Owl.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-sweet-dreams-446.mp3", // Updated to Mixkit source
     category: "sleep"
   },
+  // Update Anti-bullying category recordings with reliable sources
   {
     id: "10",
     title: "Building Resilience",
     description: "Develop psychological resilience to stand strong against bullying and peer pressure.",
     duration: "21:35",
-    audioSrc: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/blocSonic/Cory_Gray/Cory_Gray_-_Warmth/Cory_Gray_-_01_-_Recollection.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-raising-me-higher-34.mp3", // Updated to Mixkit source
     category: "anti-bullying",
     featured: true
   },
@@ -121,7 +122,7 @@ export const recordings: Recording[] = [
     title: "Teen Confidence Builder",
     description: "Build a strong sense of self-worth and confidence to overcome social challenges.",
     duration: "18:50",
-    audioSrc: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/Chad_Crouch/Arps/Chad_Crouch_-_Shipping_Lanes.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-sun-and-his-daughter-580.mp3", // Updated to Mixkit source
     category: "anti-bullying"
   },
   {
@@ -129,7 +130,7 @@ export const recordings: Recording[] = [
     title: "Emotional Shield",
     description: "Create an emotional shield to protect yourself from negative influences and remarks.",
     duration: "20:25",
-    audioSrc: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Music_for_Video/Jahzzar/Tumbling_Dishes_Like_Old-Mans_Memories/Jahzzar_-_05_-_Siesta.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-resilience-394.mp3", // Updated to Mixkit source
     category: "anti-bullying"
   },
   {
@@ -141,7 +142,7 @@ export const recordings: Recording[] = [
     category: "personal-growth",
     featured: true,
     embedType: "soundcloud",
-    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2056845500&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
+    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2056845500&color=%23ff5500&auto_play=false&hide_related=false&show_user=true&show_reposts=false&show_teaser=false",
   },
   {
     id: "14",
