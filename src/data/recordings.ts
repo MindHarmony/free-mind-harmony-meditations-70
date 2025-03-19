@@ -86,7 +86,7 @@ export const recordings: Recording[] = [
     title: "Deep Sleep Induction",
     description: "Fall asleep quickly and enjoy restful sleep all night with this sleep hypnosis.",
     duration: "30:10",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-sleepy-cat-135.mp3",
+    audioSrc: "https://assets.mixkit.co/sfx/preview/mixkit-relaxing-in-the-bedroom-2702.mp3",
     category: "sleep",
     featured: true
   },
@@ -95,7 +95,7 @@ export const recordings: Recording[] = [
     title: "Insomnia Relief",
     description: "Break the cycle of insomnia and train your mind for healthy sleep patterns.",
     duration: "27:40",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-valley-sunset-127.mp3",
+    audioSrc: "https://assets.mixkit.co/sfx/preview/mixkit-calm-forest-stream-ambience-loop-17.mp3",
     category: "sleep"
   },
   {
@@ -103,7 +103,7 @@ export const recordings: Recording[] = [
     title: "Peaceful Night's Rest",
     description: "Release the day's tension and prepare your mind and body for rejuvenating sleep.",
     duration: "25:15",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-spirit-of-the-past-99.mp3",
+    audioSrc: "https://assets.mixkit.co/sfx/preview/mixkit-waves-at-dusk-loop-1185.mp3",
     category: "sleep"
   },
   {
@@ -111,7 +111,7 @@ export const recordings: Recording[] = [
     title: "Building Resilience",
     description: "Develop psychological resilience to stand strong against bullying and peer pressure.",
     duration: "21:35",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-a-happy-day-with-my-pet-867.mp3",
+    audioSrc: "https://assets.mixkit.co/sfx/preview/mixkit-just-relax-122.mp3",
     category: "anti-bullying",
     featured: true
   },
@@ -120,7 +120,7 @@ export const recordings: Recording[] = [
     title: "Teen Confidence Builder",
     description: "Build a strong sense of self-worth and confidence to overcome social challenges.",
     duration: "18:50",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-games-worldbeat-466.mp3",
+    audioSrc: "https://assets.mixkit.co/sfx/preview/mixkit-inspiring-morning-essentials-547.mp3",
     category: "anti-bullying"
   },
   {
@@ -128,7 +128,7 @@ export const recordings: Recording[] = [
     title: "Emotional Shield",
     description: "Create an emotional shield to protect yourself from negative influences and remarks.",
     duration: "20:25",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-just-kidding-11.mp3",
+    audioSrc: "https://assets.mixkit.co/sfx/preview/mixkit-ethereal-fairy-win-notification-2311.mp3",
     category: "anti-bullying"
   },
   {
