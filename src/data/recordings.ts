@@ -1,3 +1,4 @@
+
 export type Recording = {
   id: string;
   title: string;
@@ -86,7 +87,7 @@ export const recordings: Recording[] = [
     title: "Deep Sleep Induction",
     description: "Fall asleep quickly and enjoy restful sleep all night with this sleep hypnosis.",
     duration: "30:10",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3",
+    audioSrc: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Yusuke_Tsutsumi/Zen_Music/Yusuke_Tsutsumi_-_01_-_Letting_Go.mp3",
     category: "sleep",
     featured: true
   },
@@ -95,7 +96,7 @@ export const recordings: Recording[] = [
     title: "Insomnia Relief",
     description: "Break the cycle of insomnia and train your mind for healthy sleep patterns.",
     duration: "27:40",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3",
+    audioSrc: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/Kai_Engel/Satin/Kai_Engel_-_06_-_Murmuration.mp3",
     category: "sleep"
   },
   {
@@ -103,7 +104,7 @@ export const recordings: Recording[] = [
     title: "Peaceful Night's Rest",
     description: "Release the day's tension and prepare your mind and body for rejuvenating sleep.",
     duration: "25:15",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-forest-treasure-138.mp3",
+    audioSrc: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/WFMU/Broke_For_Free/Directionless_EP/Broke_For_Free_-_01_-_Night_Owl.mp3",
     category: "sleep"
   },
   {
@@ -111,7 +112,7 @@ export const recordings: Recording[] = [
     title: "Building Resilience",
     description: "Develop psychological resilience to stand strong against bullying and peer pressure.",
     duration: "21:35",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3",
+    audioSrc: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/blocSonic/Cory_Gray/Cory_Gray_-_Warmth/Cory_Gray_-_01_-_Recollection.mp3",
     category: "anti-bullying",
     featured: true
   },
@@ -120,7 +121,7 @@ export const recordings: Recording[] = [
     title: "Teen Confidence Builder",
     description: "Build a strong sense of self-worth and confidence to overcome social challenges.",
     duration: "18:50",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-deep-urban-623.mp3",
+    audioSrc: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/Chad_Crouch/Arps/Chad_Crouch_-_Shipping_Lanes.mp3",
     category: "anti-bullying"
   },
   {
@@ -128,7 +129,7 @@ export const recordings: Recording[] = [
     title: "Emotional Shield",
     description: "Create an emotional shield to protect yourself from negative influences and remarks.",
     duration: "20:25",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-blurry-future-120.mp3",
+    audioSrc: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Music_for_Video/Jahzzar/Tumbling_Dishes_Like_Old-Mans_Memories/Jahzzar_-_05_-_Siesta.mp3",
     category: "anti-bullying"
   },
   {

@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Play, Pause, Volume2, Volume1, VolumeX } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Recording } from "@/data/recordings";
+import { toast } from "sonner";
 
 interface AudioPlayerProps {
   recording: Recording;
@@ -15,6 +16,8 @@ export const AudioPlayer = ({ recording, isCompact = false }: AudioPlayerProps) 
   const [currentTime, setCurrentTime] = useState(0);
   const [volume, setVolume] = useState(0.75);
   const [isMuted, setIsMuted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
   
   const audioRef = useRef<HTMLAudioElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
@@ -56,6 +59,7 @@ export const AudioPlayer = ({ recording, isCompact = false }: AudioPlayerProps) 
     // Reset state when recording changes
     setIsPlaying(false);
     setCurrentTime(0);
+    setHasError(false);
     
     if (audioRef.current) {
       audioRef.current.pause();
@@ -71,6 +75,7 @@ export const AudioPlayer = ({ recording, isCompact = false }: AudioPlayerProps) 
 
     const setAudioData = () => {
       setDuration(audio.duration);
+      setHasError(false);
     };
 
     const setAudioTime = () => {
@@ -81,11 +86,31 @@ export const AudioPlayer = ({ recording, isCompact = false }: AudioPlayerProps) 
       setIsPlaying(false);
       setCurrentTime(0);
     };
+    
+    const onLoadStart = () => {
+      setIsLoading(true);
+    };
+    
+    const onCanPlay = () => {
+      setIsLoading(false);
+      setHasError(false);
+    };
+    
+    const onError = () => {
+      setIsLoading(false);
+      setIsPlaying(false);
+      setHasError(true);
+      console.error("Audio error for file:", recording.audioSrc);
+      toast.error("Unable to play audio. Please try again later.");
+    };
 
     // Events
     audio.addEventListener('loadeddata', setAudioData);
     audio.addEventListener('timeupdate', setAudioTime);
     audio.addEventListener('ended', onEnded);
+    audio.addEventListener('loadstart', onLoadStart);
+    audio.addEventListener('canplay', onCanPlay);
+    audio.addEventListener('error', onError);
 
     // Set volume
     audio.volume = volume;
@@ -94,21 +119,37 @@ export const AudioPlayer = ({ recording, isCompact = false }: AudioPlayerProps) 
       audio.removeEventListener('loadeddata', setAudioData);
       audio.removeEventListener('timeupdate', setAudioTime);
       audio.removeEventListener('ended', onEnded);
+      audio.removeEventListener('loadstart', onLoadStart);
+      audio.removeEventListener('canplay', onCanPlay);
+      audio.removeEventListener('error', onError);
     };
-  }, [volume]);
+  }, [recording.audioSrc, volume]);
 
   const togglePlay = () => {
-    if (!audioRef.current) return;
+    if (!audioRef.current || hasError) return;
     
     if (isPlaying) {
       audioRef.current.pause();
+      setIsPlaying(false);
     } else {
-      audioRef.current.play().catch(error => {
-        console.error("Error playing audio:", error);
-      });
+      const playPromise = audioRef.current.play();
+      
+      if (playPromise !== undefined) {
+        setIsLoading(true);
+        
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+            setIsLoading(false);
+          })
+          .catch(error => {
+            console.error("Error playing audio:", error);
+            setIsLoading(false);
+            setHasError(true);
+            toast.error("Unable to play audio. Please try again later.");
+          });
+      }
     }
-    
-    setIsPlaying(!isPlaying);
   };
 
   const toggleMute = () => {
@@ -139,7 +180,7 @@ export const AudioPlayer = ({ recording, isCompact = false }: AudioPlayerProps) 
   };
 
   const handleProgressChange = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!progressRef.current || !audioRef.current) return;
+    if (!progressRef.current || !audioRef.current || hasError) return;
     
     const progressRect = progressRef.current.getBoundingClientRect();
     const percent = (e.clientX - progressRect.left) / progressRect.width;
@@ -176,10 +217,22 @@ export const AudioPlayer = ({ recording, isCompact = false }: AudioPlayerProps) 
       )}>
         <button 
           onClick={togglePlay}
-          className="flex-shrink-0 w-10 h-10 bg-trust-500 hover:bg-trust-600 text-white rounded-full flex items-center justify-center transition-colors duration-200"
+          disabled={hasError}
+          className={cn(
+            "flex-shrink-0 w-10 h-10 text-white rounded-full flex items-center justify-center transition-colors duration-200",
+            hasError 
+              ? "bg-calm-400 cursor-not-allowed" 
+              : "bg-trust-500 hover:bg-trust-600"
+          )}
           aria-label={isPlaying ? "Pause" : "Play"}
         >
-          {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 ml-0.5" />}
+          {isLoading ? (
+            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+          ) : isPlaying ? (
+            <Pause className="w-5 h-5" />
+          ) : (
+            <Play className="w-5 h-5 ml-0.5" />
+          )}
         </button>
         
         <div className="flex-grow">
@@ -191,26 +244,41 @@ export const AudioPlayer = ({ recording, isCompact = false }: AudioPlayerProps) 
               {recording.title}
             </div>
             <div className="text-xs text-calm-500">
-              {formatTime(currentTime)} / {formatTime(duration)}
+              {formatTime(currentTime)} / {hasError ? recording.duration : formatTime(duration)}
             </div>
           </div>
           
           <div 
             ref={progressRef}
-            className="h-1.5 bg-calm-100 rounded-full cursor-pointer relative overflow-hidden"
-            onClick={handleProgressChange}
+            className={cn(
+              "h-1.5 bg-calm-100 rounded-full relative overflow-hidden",
+              hasError ? "opacity-50" : "cursor-pointer"
+            )}
+            onClick={hasError ? undefined : handleProgressChange}
           >
             <div 
               className="absolute top-0 left-0 h-full bg-trust-400 rounded-full"
               style={{ width: `${(currentTime / duration) * 100 || 0}%` }}
             />
           </div>
+          
+          {hasError && (
+            <div className="text-xs text-red-500 mt-1">
+              Audio unavailable. Please try another recording.
+            </div>
+          )}
         </div>
         
         <div className="flex items-center space-x-2">
           <button 
             onClick={toggleMute}
-            className="text-calm-600 hover:text-trust-700 transition-colors"
+            disabled={hasError}
+            className={cn(
+              "transition-colors",
+              hasError 
+                ? "text-calm-400 cursor-not-allowed" 
+                : "text-calm-600 hover:text-trust-700"
+            )}
             aria-label={isMuted ? "Unmute" : "Mute"}
           >
             {getVolumeIcon()}
@@ -224,7 +292,11 @@ export const AudioPlayer = ({ recording, isCompact = false }: AudioPlayerProps) 
               step="0.01"
               value={volume}
               onChange={handleVolumeChange}
-              className="w-20 h-1.5 bg-calm-100 rounded-full appearance-none cursor-pointer"
+              disabled={hasError}
+              className={cn(
+                "w-20 h-1.5 bg-calm-100 rounded-full appearance-none",
+                hasError ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
+              )}
               aria-label="Volume"
             />
           )}
