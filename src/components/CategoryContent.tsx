@@ -57,13 +57,7 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
             <AudioPlayer recording={recording} />
           </div>
           
-          {/* Affiliate Text and Banner */}
-          <div className="text-center mb-3">
-            <p className="text-calm-700 text-sm md:text-base">
-              The Centre For Healing - they don't just teach superior therapy modalities - they equip you with the full business toolkit you need to succeed. From Ready-to use forms & scripts, to Professional Business Plans, Marketing Strategies and Practitioner Support. Click below to find out more 👇
-            </p>
-          </div>
-          
+          {/* Affiliate Banner */}
           <a 
             href="https://www.thecentreforhealing.com/a/43957/EFJWNTPz"
             target="_blank"
@@ -77,6 +71,13 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
               className="w-full h-auto"
             />
           </a>
+          
+          {/* Affiliate Text */}
+          <div className="text-left mt-3">
+            <p className="text-calm-700 text-sm md:text-base">
+              The Centre For Healing - they don't just teach superior therapy modalities - they equip you with the full business toolkit you need to succeed. From Ready-to use forms & scripts, to Professional Business Plans, Marketing Strategies and Practitioner Support.
+            </p>
+          </div>
         </div>
       )}
     </div>
