@@ -75,7 +75,7 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
           {/* Affiliate Text */}
           <div className="text-left mt-3">
             <p className="text-calm-700 text-sm md:text-base">
-              The Centre For Healing - they don't just teach superior therapy modalities - they equip you with the full business toolkit you need to succeed. From Ready-to use Forms & Scripts, to Professional Business Plans, Marketing Strategies and Practitioner Support.
+              The Centre For Healing - they don't just teach superior therapy modalities - they equip you with the full business toolkit you need to succeed. From Ready-to-use Forms & Scripts, to Professional Business Plans, Marketing Strategies and Practitioner Support.
             </p>
           </div>
         </div>
