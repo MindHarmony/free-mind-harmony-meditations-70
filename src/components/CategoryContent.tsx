@@ -57,7 +57,13 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
             <AudioPlayer recording={recording} />
           </div>
           
-          {/* Affiliate Banner */}
+          {/* Affiliate Text and Banner */}
+          <div className="text-center mb-3">
+            <p className="text-calm-700 text-sm md:text-base">
+              The Centre For Healing - they don't just teach superior therapy modalities - they equip you with the full business toolkit you need to succeed. From Ready-to use forms & scripts, to Professional Business Plans, Marketing Strategies and Practitioner Support. Click below to find out more 👇
+            </p>
+          </div>
+          
           <a 
             href="https://www.thecentreforhealing.com/a/43957/EFJWNTPz"
             target="_blank"
