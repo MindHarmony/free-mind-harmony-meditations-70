@@ -100,10 +100,16 @@ const Index = () => {
               <p>© 2023 Mind Harmony. All rights reserved.</p>
               <p className="mt-1 mb-3">Free hypnosis recordings for personal development.</p>
               <div className="flex justify-center space-x-6">
-                <Link to="/privacy" className="text-trust-500 hover:text-trust-600 transition-colors">
+                <Link 
+                  to="/privacy" 
+                  className="text-trust-500 hover:text-trust-600 transition-colors cursor-pointer"
+                >
                   Privacy Policy
                 </Link>
-                <Link to="/cookie-policy" className="text-trust-500 hover:text-trust-600 transition-colors">
+                <Link 
+                  to="/cookie-policy" 
+                  className="text-trust-500 hover:text-trust-600 transition-colors cursor-pointer"
+                >
                   Cookie Policy
                 </Link>
               </div>
