@@ -22,7 +22,7 @@ export const categoryNames: Record<Category, string> = {
   "stress-anxiety": "Anxiety",
   "confidence": "Confidence",
   "sleep": "Sleep & Insomnia",
-  "anti-bullying": "Anti-Bullying",
+  "anti-bullying": "Teenage Anti-Bullying",
   "personal-growth": "Future Self Visualization"
 };
 
@@ -89,10 +89,10 @@ export const recordings: Recording[] = [
     keywords: ["free hypnosis to boost confidence and motivation", "hypnosis to overcome self-doubt and fear", "inner strength meditation"]
   },
 
-  // Update the sleep recordings with new audio sources
+  // Update the sleep recordings with new title for the first one
   {
     id: "7",
-    title: "Deep Sleep Induction",
+    title: "Deep Sleep Meditation",
     description: "Free sleep hypnosis for deep relaxation. Fall asleep quickly and enjoy restful sleep all night with this best sleep meditation for anxiety and stress.",
     duration: "30:10",
     audioSrc: "https://assets.mixkit.co/music/preview/mixkit-forest-treasure-138.mp3", // Updated to a more reliable source

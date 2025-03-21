@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { AudioPlayer } from "./AudioPlayer";
 import { Recording, getRecordingsByCategory, Category } from "@/data/recordings";
-import { Clock } from "lucide-react";
+import { Clock, AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface CategoryContentProps {
@@ -66,7 +66,24 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
                 </div>
               )}
             </div>
-            <AudioPlayer recording={recording} />
+            
+            {/* Coming Soon Announcement for Sleep and Anti-bullying categories */}
+            {(category === "sleep" || category === "anti-bullying") ? (
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-4">
+                <div className="flex items-start">
+                  <AlertCircle className="w-5 h-5 text-amber-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-medium text-amber-800">Coming Soon</h3>
+                    <p className="text-amber-700 text-sm mt-1">
+                      We're currently updating our {category === "sleep" ? "Sleep & Insomnia" : "Teenage Anti-Bullying"} recordings. 
+                      Please check back soon for new meditation content!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <AudioPlayer recording={recording} />
+            )}
             
             {/* Enhanced structured data for this audio content */}
             <script type="application/ld+json">
