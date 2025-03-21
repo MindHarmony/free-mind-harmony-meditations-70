@@ -51,7 +51,7 @@ const About = () => {
             
             <section>
               <h2 className="text-xl font-medium text-calm-800 mb-3">About Our Company</h2>
-              <p>Mind Harmony is a subsidiary of Zero-Limits Hypnotherapy, a respected provider of therapeutic hypnosis and mindfulness solutions. We leverage the expertise and experience of Zero-Limits to bring you high-quality meditation and hypnosis content.</p>
+              <p>Mind Harmony is a subsidiary of The Infinity Group NZ Limited, a respected provider of therapeutic hypnosis and mindfulness solutions. We leverage the expertise and experience of The Infinity Group NZ Limited to bring you high-quality meditation and hypnosis content.</p>
             </section>
             
             <section>
@@ -63,12 +63,12 @@ const About = () => {
             <section>
               <h2 className="text-xl font-medium text-calm-800 mb-3">Contact Us</h2>
               <p>We value your feedback and are here to help with any questions or suggestions you might have.</p>
-              <p className="mt-2">Email: <a href="mailto:carla@zero-limits.co.nz" className="text-trust-600 hover:text-trust-700">carla@zero-limits.co.nz</a></p>
+              <p className="mt-2">Email: <a href="mailto:carla@theinfinitygroup.nz" className="text-trust-600 hover:text-trust-700">carla@theinfinitygroup.nz</a></p>
             </section>
           </div>
           
           <div className="mt-10 pt-6 border-t border-calm-100 text-center text-sm text-calm-500">
-            <p>Mind Harmony - A subsidiary of Zero-Limits Hypnotherapy</p>
+            <p>Mind Harmony - A subsidiary of The Infinity Group NZ Limited</p>
             <p className="mt-1">© {new Date().getFullYear()} Mind Harmony. All rights reserved.</p>
           </div>
         </div>

@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -69,10 +70,10 @@ const CookiePolicy = () => {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">Contact us</h2>
         <p className="mb-4">
-          If you have any questions about our Cookie Policy, please contact us at carla@zero-limits.co.nz.
+          If you have any questions about our Cookie Policy, please contact us at carla@theinfinitygroup.nz.
         </p>
         <p className="mb-4">
-          Mind Harmony is a subsidiary of Zero-Limits Hypnotherapy. All cookie policy inquiries are handled in accordance with our parent company's data protection standards.
+          Mind Harmony is a subsidiary of The Infinity Group NZ Limited. All cookie policy inquiries are handled in accordance with our parent company's data protection standards.
         </p>
       </section>
     </div>
