@@ -42,3 +42,14 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Ensure no elements have fixed or sticky positioning unless explicitly needed */
+html, body, #root, main, div, footer {
+  position: relative;
+}
+
+/* Ensure proper scrolling without sticky elements */
+html, body {
+  overflow-x: hidden;
+  height: 100%;
+}

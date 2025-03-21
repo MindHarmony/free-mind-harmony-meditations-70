@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -54,8 +55,8 @@ const Index = () => {
           onCategoryChange={handleCategoryChange}
         />
         
-        {/* Main Content - removing any potential sticky behaviors */}
-        <div className="flex-1 overflow-y-auto p-4 md:p-8">
+        {/* Main Content - removing any sticky behaviors */}
+        <div className="flex-1 overflow-y-auto p-4 md:p-8 relative">
           <div className="max-w-4xl mx-auto">
             <header className="mb-6 md:mb-10 relative">
               {/* Breadcrumbs for better navigation */}
@@ -80,7 +81,7 @@ const Index = () => {
             </header>
 
             {/* Ad Space (Header) - Hide on small mobile screens - removing any fixed positioning */}
-            <div className="hidden sm:block mb-6 md:mb-10 bg-calm-50 border border-calm-100 rounded-xl p-4 text-center">
+            <div className="hidden sm:block mb-6 md:mb-10 bg-calm-50 border border-calm-100 rounded-xl p-4 text-center relative">
               <p className="text-calm-500 text-sm">Advertisement Space</p>
               <div className="h-16 flex items-center justify-center border border-dashed border-calm-200 rounded-lg mt-2">
                 <span className="text-calm-400">Google Ad</span>
@@ -91,7 +92,7 @@ const Index = () => {
             <main className="relative">
               <CategoryContent category={activeCategory} />
               
-              {/* Ad Space - removing any sticky positioning */}
+              {/* Ad Space - ensuring it's not sticky */}
               <div className="mt-6 md:mt-10 bg-calm-50 border border-calm-100 rounded-xl p-4 text-center relative">
                 <p className="text-calm-500 text-sm">Advertisement Space</p>
                 <div className="h-24 md:h-48 flex items-center justify-center border border-dashed border-calm-200 rounded-lg mt-2">
@@ -100,6 +101,7 @@ const Index = () => {
               </div>
             </main>
 
+            {/* Footer - ensuring it's not sticky */}
             <footer className="mt-6 md:mt-10 pt-4 md:pt-6 border-t border-calm-100 text-center text-xs md:text-sm text-calm-500 relative">
               <p>© {new Date().getFullYear()} Mind Harmony. All rights reserved.</p>
               <p className="mt-1 mb-3">Free hypnosis recordings for personal development.</p>
