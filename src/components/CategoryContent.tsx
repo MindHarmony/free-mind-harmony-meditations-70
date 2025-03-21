@@ -43,20 +43,32 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
     <div className="animate-fade-in">
       {recording && (
         <div className="fade-in space-y-6">
-          <article className="bg-white rounded-2xl shadow-md p-6">
+          <article className="bg-white rounded-2xl shadow-md p-6" itemScope itemType="https://schema.org/AudioObject">
             <div className="mb-5">
               <div className="flex justify-between items-start mb-2">
-                <h2 className="text-xl font-medium text-calm-900">{recording.title}</h2>
+                <h2 className="text-xl font-medium text-calm-900" itemProp="name">{recording.title}</h2>
                 <div className="flex items-center text-xs text-calm-500">
                   <Clock className="w-3.5 h-3.5 mr-1" />
-                  <span>{recording.duration}</span>
+                  <span itemProp="duration">{recording.duration}</span>
                 </div>
               </div>
-              <p className="text-calm-600 mt-2">{recording.description}</p>
+              <p className="text-calm-600 mt-2" itemProp="description">{recording.description}</p>
+              
+              {/* Keywords for SEO - hidden visually but available for search engines */}
+              {recording.keywords && (
+                <div className="sr-only">
+                  <h3>Related searches:</h3>
+                  <ul>
+                    {recording.keywords.map((keyword, index) => (
+                      <li key={index}>{keyword}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
             <AudioPlayer recording={recording} />
             
-            {/* Structured data for this audio content */}
+            {/* Enhanced structured data for this audio content */}
             <script type="application/ld+json">
               {JSON.stringify({
                 "@context": "https://schema.org",
@@ -66,6 +78,7 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
                 "duration": recording.duration,
                 "contentUrl": recording.audioSrc,
                 "encodingFormat": "audio/mpeg",
+                "keywords": recording.keywords?.join(", "),
                 "potentialAction": {
                   "@type": "ListenAction",
                   "target": {
