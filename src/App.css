@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +40,18 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Ensure no fixed position elements showing copyright */
+body::after {
+  display: none !important;
+}
+
+/* Remove any potential fixed elements at the bottom */
+body > div:not(#root),
+#root::after,
+.fixed-bottom,
+.sticky-bottom,
+.copyright-notice {
+  display: none !important;
 }
