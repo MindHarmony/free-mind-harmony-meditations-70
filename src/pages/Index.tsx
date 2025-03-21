@@ -75,7 +75,7 @@ const Index = () => {
                 {categoryNames[activeCategory]} Hypnosis & Meditation
               </h1>
               <p className="text-sm md:text-base text-calm-600 mt-2">
-                Free {categoryNames[activeCategory].toLowerCase()} recordings to help you achieve mental balance and harmony. 
+                Free {categoryNames[activeCategory].toLowerCase()} recording to help you achieve mental balance and harmony. 
                 Click on the session below to listen instantly - no registration required.
               </p>
             </header>
