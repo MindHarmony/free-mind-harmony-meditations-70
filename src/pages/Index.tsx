@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -105,13 +104,6 @@ const Index = () => {
               <p>© {new Date().getFullYear()} Mind Harmony. All rights reserved.</p>
               <p className="mt-1 mb-3">Free hypnosis recordings for personal development.</p>
               <div className="flex justify-center space-x-6">
-                <button 
-                  onClick={() => handleNavigate("/privacy")}
-                  className="text-trust-500 hover:text-trust-600 transition-colors cursor-pointer"
-                  aria-label="View Privacy Policy"
-                >
-                  Privacy Policy
-                </button>
                 <button 
                   onClick={() => handleNavigate("/cookie-policy")}
                   className="text-trust-500 hover:text-trust-600 transition-colors cursor-pointer"
