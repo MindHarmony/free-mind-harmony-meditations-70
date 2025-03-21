@@ -93,7 +93,7 @@ export const recordings: Recording[] = [
     title: "Deep Sleep Induction",
     description: "Free sleep hypnosis for deep relaxation. Fall asleep quickly and enjoy restful sleep all night with this best sleep meditation for anxiety and stress.",
     duration: "30:10",
-    audioSrc: "https://assets.mixkit.co/sfx/preview/mixkit-calm-forest-stream-birds-nature-ambience-1242.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3",
     category: "sleep",
     featured: true,
     keywords: ["free sleep hypnosis for deep relaxation", "best sleep meditation for anxiety and stress", "sleep hypnosis"]
@@ -103,7 +103,7 @@ export const recordings: Recording[] = [
     title: "Insomnia Relief",
     description: "Insomnia relief meditation for a restful night. Break the cycle of insomnia and train your mind for healthy sleep patterns with this hypnosis for calming the mind before bed.",
     duration: "27:40",
-    audioSrc: "https://assets.mixkit.co/sfx/preview/mixkit-forest-birds-singing-in-the-morning-2432.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3",
     category: "sleep",
     keywords: ["insomnia relief meditation for a restful night", "hypnosis for calming the mind before bed", "sleep meditation"]
   },
@@ -112,7 +112,7 @@ export const recordings: Recording[] = [
     title: "Peaceful Night's Rest",
     description: "10-minute guided meditation for falling asleep fast. Release the day's tension and prepare your mind and body for rejuvenating sleep regardless of anxiety levels.",
     duration: "25:15",
-    audioSrc: "https://assets.mixkit.co/sfx/preview/mixkit-meadow-with-animals-ambience-1787.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-a-very-happy-christmas-897.mp3",
     category: "sleep",
     keywords: ["10-minute guided meditation for falling asleep fast", "quick sleep meditation", "bedtime relaxation"]
   },
@@ -121,7 +121,7 @@ export const recordings: Recording[] = [
     title: "Building Resilience",
     description: "Guided meditation for teens dealing with bullying. Develop psychological resilience to stand strong against bullying and peer pressure with this supportive hypnosis session.",
     duration: "21:35",
-    audioSrc: "https://assets.mixkit.co/sfx/preview/mixkit-relaxing-piano-background-music-1979.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3",
     category: "anti-bullying",
     featured: true,
     keywords: ["guided meditation for teens dealing with bullying", "hypnosis for building resilience after bullying", "teen resilience"]
@@ -131,7 +131,7 @@ export const recordings: Recording[] = [
     title: "Teen Confidence Builder",
     description: "Self-love meditation for teenagers with low confidence. Build a strong sense of self-worth and confidence to overcome social challenges and bullying situations.",
     duration: "18:50",
-    audioSrc: "https://assets.mixkit.co/sfx/preview/mixkit-piano-meditation-harmony-2439.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-driving-ambition-32.mp3",
     category: "anti-bullying",
     keywords: ["self-love meditation for teenagers with low confidence", "teen confidence meditation", "overcoming bullying"]
   },
@@ -140,7 +140,7 @@ export const recordings: Recording[] = [
     title: "Emotional Shield",
     description: "Meditation to let go of negative thoughts from bullying. Create an emotional shield to protect yourself from negative influences and remarks, helping you stay strong after being bullied.",
     duration: "20:25",
-    audioSrc: "https://assets.mixkit.co/sfx/preview/mixkit-soft-piano-sad-music-2778.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-deep-urban-623.mp3",
     category: "anti-bullying",
     keywords: ["meditation to let go of negative thoughts from bullying", "how to stay strong after being bullied – meditation", "emotional protection"]
   },
