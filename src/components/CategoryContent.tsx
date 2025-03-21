@@ -107,27 +107,57 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
             </script>
           </article>
           
-          {/* Affiliate Banner */}
-          <a 
-            href="https://www.thecentreforhealing.com/a/43957/EFJWNTPz"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full rounded-xl overflow-hidden shadow-md transition-transform hover:shadow-lg hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-trust-500"
-            aria-label="Visit The Centre for Healing"
-          >
-            <img 
-              src="/lovable-uploads/6cb5cd17-484c-4d25-859e-ff5b1d0c0bf6.png" 
-              alt="Share your Light - Become a qualified healer & therapist through The Centre for Healing" 
-              className="w-full h-auto"
-            />
-          </a>
-          
-          {/* Affiliate Text */}
-          <div className="text-left mt-3">
-            <p className="text-calm-700 text-sm md:text-base">
-              The Centre For Healing - they don't just teach superior therapy modalities - they equip you with the full business toolkit you need to succeed. From Ready-to-use Forms & Scripts, to Professional Business Plans, Marketing Strategies and Practitioner Support.
-            </p>
-          </div>
+          {/* SEO Optimized Affiliate Banner with Structured Data */}
+          <section itemScope itemType="https://schema.org/Product" className="affiliate-section">
+            <meta itemProp="name" content="The Centre for Healing - Therapy Training Programs" />
+            <meta itemProp="description" content="Comprehensive training for healers and therapists with business toolkit, marketing strategies, and professional support." />
+            <meta itemProp="brand" content="The Centre for Healing" />
+            
+            <a 
+              href="https://www.thecentreforhealing.com/a/43957/EFJWNTPz"
+              target="_blank"
+              rel="noopener sponsored"
+              className="block w-full rounded-xl overflow-hidden shadow-md transition-transform hover:shadow-lg hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-trust-500"
+              aria-label="Become a qualified healer & therapist through The Centre for Healing"
+              title="Learn superior therapy modalities and business skills with The Centre for Healing"
+              itemProp="url"
+            >
+              <img 
+                src="/lovable-uploads/6cb5cd17-484c-4d25-859e-ff5b1d0c0bf6.png" 
+                alt="The Centre for Healing - Become a qualified healer & therapist with complete business toolkit and support" 
+                className="w-full h-auto"
+                itemProp="image"
+                loading="lazy"
+              />
+            </a>
+            
+            {/* Affiliate Text with semantic HTML */}
+            <div className="text-left mt-3" itemProp="offers" itemScope itemType="https://schema.org/Offer">
+              <h3 className="text-lg font-medium text-calm-900 mb-2" itemProp="name">The Centre For Healing - Therapy Training Programs</h3>
+              <p className="text-calm-700 text-sm md:text-base" itemProp="description">
+                Transform your life by becoming a qualified healer and therapist. The Centre For Healing doesn't just teach superior therapy modalities - they equip you with the full business toolkit you need to succeed. From ready-to-use forms & scripts to professional business plans, marketing strategies and ongoing practitioner support.
+              </p>
+              <meta itemProp="priceCurrency" content="USD" />
+              <meta itemProp="availability" content="https://schema.org/InStock" />
+              <link itemProp="url" href="https://www.thecentreforhealing.com/a/43957/EFJWNTPz" />
+            </div>
+            
+            {/* Structured data for the affiliate relationship */}
+            <script type="application/ld+json">
+              {JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "The Centre for Healing",
+                "url": "https://www.thecentreforhealing.com/a/43957/EFJWNTPz",
+                "logo": "https://www.thecentreforhealing.com/logo.png",
+                "description": "The Centre For Healing offers comprehensive training for healers and therapists with complete business toolkit and ongoing support.",
+                "sameAs": [
+                  "https://www.facebook.com/thecentreforhealing",
+                  "https://www.instagram.com/thecentreforhealing/"
+                ]
+              })}
+            </script>
+          </section>
         </div>
       )}
     </div>
