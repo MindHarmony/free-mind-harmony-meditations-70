@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -33,7 +32,7 @@ const Index = () => {
     "anti-bullying": "Supportive meditations for teens dealing with bullying, building resilience, and developing self-love techniques to stay emotionally strong.",
     "personal-growth": "Manifest your dreams and visualize your ideal future self with our guided meditation recordings for personal growth, abundance, and positive change."
   };
-
+  
   return (
     <>
       <Helmet>
@@ -98,9 +97,9 @@ const Index = () => {
 
             <footer className="mt-6 md:mt-10 pt-4 md:pt-6 border-t border-calm-100 text-center text-xs md:text-sm text-calm-500">
               <p>© 2023 Mind Harmony. All rights reserved.</p>
-              <p className="mt-1">Free hypnosis recordings for personal development.</p>
-              <div className="mt-2 md:mt-3">
-                <Link to="/privacy" className="text-trust-500 hover:text-trust-600 transition-colors mr-4">
+              <p className="mt-1 mb-3">Free hypnosis recordings for personal development.</p>
+              <div className="flex justify-center space-x-6">
+                <Link to="/privacy" className="text-trust-500 hover:text-trust-600 transition-colors">
                   Privacy Policy
                 </Link>
                 <Link to="/cookie-policy" className="text-trust-500 hover:text-trust-600 transition-colors">
