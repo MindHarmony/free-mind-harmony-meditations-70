@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { HeartPulse, Star, Moon, Shield, User, Menu } from "lucide-react";
+import { HeartPulse, Star, Moon, Shield, User, Menu, FileText, Info } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Category, categoryNames } from "@/data/recordings";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -56,6 +56,10 @@ export const Sidebar = ({
     }
   ];
 
+  const handleNavigate = (path: string) => {
+    window.location.href = path;
+  };
+
   return (
     <div
       className={cn(
@@ -89,36 +93,87 @@ export const Sidebar = ({
         </button>
       </div>
 
-      <nav className="space-y-1 px-2">
-        {categories.map((category) => (
+      {/* Main Navigation - Categories */}
+      <div className="px-2 mb-6">
+        <div className={cn(
+          "mb-2 px-2 text-xs font-medium text-calm-500",
+          isCollapsed && "text-center"
+        )}>
+          {!isCollapsed && "CATEGORIES"}
+        </div>
+        <nav className="space-y-1">
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => onCategoryChange(category.id)}
+              className={cn(
+                "w-full flex items-center px-2 py-2 rounded-lg transition-all duration-200 group",
+                activeCategory === category.id 
+                  ? "bg-sidebar-accent text-sidebar-primary font-medium" 
+                  : "text-calm-600 hover:bg-trust-50 hover:text-trust-700"
+              )}
+              aria-label={`${category.name} category`}
+            >
+              <span className="flex-shrink-0">{category.icon}</span>
+              <span 
+                className={cn(
+                  "ml-3 transition-opacity duration-300",
+                  isCollapsed ? "opacity-0 w-0 overflow-hidden" : "opacity-100"
+                )}
+              >
+                {category.name}
+              </span>
+            </button>
+          ))}
+        </nav>
+      </div>
+
+      {/* Information Section */}
+      <div className="px-2 mb-6">
+        <div className={cn(
+          "mb-2 px-2 text-xs font-medium text-calm-500",
+          isCollapsed && "text-center"
+        )}>
+          {!isCollapsed && "INFO"}
+        </div>
+        <nav className="space-y-1">
           <button
-            key={category.id}
-            onClick={() => onCategoryChange(category.id)}
-            className={cn(
-              "w-full flex items-center px-2 py-2 rounded-lg transition-all duration-200 group",
-              activeCategory === category.id 
-                ? "bg-sidebar-accent text-sidebar-primary font-medium" 
-                : "text-calm-600 hover:bg-trust-50 hover:text-trust-700"
-            )}
-            aria-label={`${category.name} category`}
+            onClick={() => handleNavigate("/about")}
+            className="w-full flex items-center px-2 py-2 rounded-lg transition-all duration-200 text-calm-600 hover:bg-trust-50 hover:text-trust-700"
+            aria-label="About Mind Harmony"
           >
-            <span className="flex-shrink-0">{category.icon}</span>
+            <span className="flex-shrink-0"><Info className="w-5 h-5" /></span>
             <span 
               className={cn(
                 "ml-3 transition-opacity duration-300",
                 isCollapsed ? "opacity-0 w-0 overflow-hidden" : "opacity-100"
               )}
             >
-              {category.name}
+              About Us
             </span>
           </button>
-        ))}
-      </nav>
+          <button
+            onClick={() => handleNavigate("/privacy")}
+            className="w-full flex items-center px-2 py-2 rounded-lg transition-all duration-200 text-calm-600 hover:bg-trust-50 hover:text-trust-700"
+            aria-label="Privacy Policy"
+          >
+            <span className="flex-shrink-0"><FileText className="w-5 h-5" /></span>
+            <span 
+              className={cn(
+                "ml-3 transition-opacity duration-300",
+                isCollapsed ? "opacity-0 w-0 overflow-hidden" : "opacity-100"
+              )}
+            >
+              Privacy Policy
+            </span>
+          </button>
+        </nav>
+      </div>
 
       {!isCollapsed && (
         <div className="absolute bottom-6 left-0 right-0 px-4">
           <div className="text-center text-xs text-calm-500">
-            <p>© 2023 Mind Harmony</p>
+            <p>© {new Date().getFullYear()} Mind Harmony</p>
             <p className="mt-1">All rights reserved</p>
           </div>
         </div>

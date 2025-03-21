@@ -43,6 +43,19 @@ const Privacy = () => {
             </section>
             
             <section>
+              <h2 className="text-xl font-medium text-calm-800 mb-3">Advertising and Third-Party Cookies</h2>
+              <p>Mind Harmony uses Google AdSense, an advertising service provided by Google Inc., to display advertisements on our website. Google AdSense may use cookies and similar technologies to collect information about your browsing activities to provide you with personalized advertisements based on your interests.</p>
+              <p className="mt-2">These third-party vendors, including Google, use cookies to serve ads based on your prior visits to our website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to our site and/or other sites on the Internet.</p>
+              <p className="mt-2">You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" className="text-trust-600 hover:text-trust-700" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.</p>
+              <p className="mt-2">We have implemented the following Google Analytics Advertising Features:</p>
+              <ul className="list-disc pl-5 mt-2 space-y-1">
+                <li>Remarketing with Google Analytics</li>
+                <li>Google Display Network Impression Reporting</li>
+                <li>Google Analytics Demographics and Interest Reporting</li>
+              </ul>
+            </section>
+            
+            <section>
               <h2 className="text-xl font-medium text-calm-800 mb-3">How We Use Your Personal Data</h2>
               <p>We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:</p>
               <ul className="list-disc pl-5 mt-2 space-y-1">
@@ -88,7 +101,7 @@ const Privacy = () => {
             <section>
               <h2 className="text-xl font-medium text-calm-800 mb-3">Contact Us</h2>
               <p>If you have any questions about this Privacy Policy, you can contact us:</p>
-              <p className="mt-2">By email: privacy@mindharmony.com</p>
+              <p className="mt-2">By email: <a href="mailto:privacy@mindharmony.com" className="text-trust-600 hover:text-trust-700">privacy@mindharmony.com</a></p>
             </section>
           </div>
           

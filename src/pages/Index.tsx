@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -31,6 +32,11 @@ const Index = () => {
     "sleep": "Fall asleep faster and enjoy deeper rest with our free sleep hypnosis recordings designed to calm your mind before bed and relieve insomnia.",
     "anti-bullying": "Supportive meditations for teens dealing with bullying, building resilience, and developing self-love techniques to stay emotionally strong.",
     "personal-growth": "Manifest your dreams and visualize your ideal future self with our guided meditation recordings for personal growth, abundance, and positive change."
+  };
+
+  // Function to handle navigation
+  const handleNavigate = (path: string) => {
+    window.location.href = path;
   };
   
   return (
@@ -96,27 +102,23 @@ const Index = () => {
             </main>
 
             <footer className="mt-6 md:mt-10 pt-4 md:pt-6 border-t border-calm-100 text-center text-xs md:text-sm text-calm-500">
-              <p>© 2023 Mind Harmony. All rights reserved.</p>
+              <p>© {new Date().getFullYear()} Mind Harmony. All rights reserved.</p>
               <p className="mt-1 mb-3">Free hypnosis recordings for personal development.</p>
               <div className="flex justify-center space-x-6">
-                <Link 
-                  to="/privacy" 
+                <button 
+                  onClick={() => handleNavigate("/privacy")}
                   className="text-trust-500 hover:text-trust-600 transition-colors cursor-pointer"
                   aria-label="View Privacy Policy"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.location.href = "/privacy";
-                  }}
                 >
                   Privacy Policy
-                </Link>
-                <Link 
-                  to="/cookie-policy" 
+                </button>
+                <button 
+                  onClick={() => handleNavigate("/cookie-policy")}
                   className="text-trust-500 hover:text-trust-600 transition-colors cursor-pointer"
                   aria-label="View Cookie Policy"
                 >
                   Cookie Policy
-                </Link>
+                </button>
               </div>
             </footer>
           </div>
