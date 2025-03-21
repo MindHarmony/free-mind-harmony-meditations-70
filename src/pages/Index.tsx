@@ -71,13 +71,8 @@ const Index = () => {
               </h1>
               <p className="text-sm md:text-base text-calm-600 mt-2">
                 Free {categoryNames[activeCategory].toLowerCase()} recordings to help you achieve mental balance and harmony. 
-                Click on any session below to listen instantly - no registration required.
+                Click on the session below to listen instantly - no registration required.
               </p>
-              
-              {/* SEO enriched description based on category - visible to users and helpful for SEO */}
-              <div className="mt-3 text-sm text-calm-700">
-                <p>{categoryDescriptions[activeCategory]}</p>
-              </div>
             </header>
 
             {/* Ad Space (Header) - Hide on small mobile screens */}
