@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -104,6 +103,10 @@ const Index = () => {
                   to="/privacy" 
                   className="text-trust-500 hover:text-trust-600 transition-colors cursor-pointer"
                   aria-label="View Privacy Policy"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = "/privacy";
+                  }}
                 >
                   Privacy Policy
                 </Link>
