@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -86,7 +87,7 @@ const Index = () => {
             <main>
               <CategoryContent category={activeCategory} />
               
-              {/* Ad Space (Side) */}
+              {/* Ad Space (Side) - Modified to remove any potential sticky copyright */}
               <div className="mt-6 md:mt-10 bg-calm-50 border border-calm-100 rounded-xl p-4 text-center">
                 <p className="text-calm-500 text-sm">Advertisement Space</p>
                 <div className="h-24 md:h-48 flex items-center justify-center border border-dashed border-calm-200 rounded-lg mt-2">
