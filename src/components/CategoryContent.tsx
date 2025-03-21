@@ -43,10 +43,10 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
     <div className="animate-fade-in">
       {recording && (
         <div className="fade-in space-y-6">
-          <div className="bg-white rounded-2xl shadow-md p-6">
+          <article className="bg-white rounded-2xl shadow-md p-6">
             <div className="mb-5">
               <div className="flex justify-between items-start mb-2">
-                <h3 className="text-xl font-medium text-calm-900">{recording.title}</h3>
+                <h2 className="text-xl font-medium text-calm-900">{recording.title}</h2>
                 <div className="flex items-center text-xs text-calm-500">
                   <Clock className="w-3.5 h-3.5 mr-1" />
                   <span>{recording.duration}</span>
@@ -55,7 +55,27 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
               <p className="text-calm-600 mt-2">{recording.description}</p>
             </div>
             <AudioPlayer recording={recording} />
-          </div>
+            
+            {/* Structured data for this audio content */}
+            <script type="application/ld+json">
+              {JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "AudioObject",
+                "name": recording.title,
+                "description": recording.description,
+                "duration": recording.duration,
+                "contentUrl": recording.audioSrc,
+                "encodingFormat": "audio/mpeg",
+                "potentialAction": {
+                  "@type": "ListenAction",
+                  "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": window.location.href
+                  }
+                }
+              })}
+            </script>
+          </article>
           
           {/* Affiliate Banner */}
           <a 
