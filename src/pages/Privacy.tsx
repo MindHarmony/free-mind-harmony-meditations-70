@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -28,7 +27,7 @@ const Privacy = () => {
           <div className="space-y-6 text-calm-700">
             <section>
               <h2 className="text-xl font-medium text-calm-800 mb-3">Introduction</h2>
-              <p>Welcome to Mind Harmony. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.</p>
+              <p>Welcome to Mind Harmony, a subsidiary of Zero-Limits Hypnotherapy. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.</p>
             </section>
             
             <section>
@@ -101,12 +100,14 @@ const Privacy = () => {
             <section>
               <h2 className="text-xl font-medium text-calm-800 mb-3">Contact Us</h2>
               <p>If you have any questions about this Privacy Policy, you can contact us:</p>
-              <p className="mt-2">By email: <a href="mailto:privacy@mindharmony.com" className="text-trust-600 hover:text-trust-700">privacy@mindharmony.com</a></p>
+              <p className="mt-2">By email: <a href="mailto:carla@zero-limits.co.nz" className="text-trust-600 hover:text-trust-700">carla@zero-limits.co.nz</a></p>
+              <p className="mt-2">Mind Harmony is a subsidiary of Zero-Limits Hypnotherapy. All privacy inquiries are handled in accordance with our parent company's data protection standards.</p>
             </section>
           </div>
           
           <div className="mt-10 pt-6 border-t border-calm-100 text-center text-sm text-calm-500">
-            <p>Last updated: {new Date().toLocaleDateString()}</p>
+            <p>Mind Harmony - A subsidiary of Zero-Limits Hypnotherapy</p>
+            <p className="mt-1">Last updated: {new Date().toLocaleDateString()}</p>
           </div>
         </div>
       </div>

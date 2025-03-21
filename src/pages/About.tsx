@@ -50,6 +50,11 @@ const About = () => {
             </section>
             
             <section>
+              <h2 className="text-xl font-medium text-calm-800 mb-3">About Our Company</h2>
+              <p>Mind Harmony is a subsidiary of Zero-Limits Hypnotherapy, a respected provider of therapeutic hypnosis and mindfulness solutions. We leverage the expertise and experience of Zero-Limits to bring you high-quality meditation and hypnosis content.</p>
+            </section>
+            
+            <section>
               <h2 className="text-xl font-medium text-calm-800 mb-3">Advertising on Mind Harmony</h2>
               <p>To keep our content completely free, Mind Harmony is supported by carefully selected advertisements. We ensure all ads are relevant and non-intrusive to your meditation experience.</p>
               <p className="mt-2">We partner with Google AdSense to provide these advertisements and are committed to maintaining a balance between sustainability and user experience.</p>
@@ -58,12 +63,12 @@ const About = () => {
             <section>
               <h2 className="text-xl font-medium text-calm-800 mb-3">Contact Us</h2>
               <p>We value your feedback and are here to help with any questions or suggestions you might have.</p>
-              <p className="mt-2">Email: <a href="mailto:contact@mindharmony.com" className="text-trust-600 hover:text-trust-700">contact@mindharmony.com</a></p>
+              <p className="mt-2">Email: <a href="mailto:carla@zero-limits.co.nz" className="text-trust-600 hover:text-trust-700">carla@zero-limits.co.nz</a></p>
             </section>
           </div>
           
           <div className="mt-10 pt-6 border-t border-calm-100 text-center text-sm text-calm-500">
-            <p>Mind Harmony - Your partner in mental wellness</p>
+            <p>Mind Harmony - A subsidiary of Zero-Limits Hypnotherapy</p>
             <p className="mt-1">© {new Date().getFullYear()} Mind Harmony. All rights reserved.</p>
           </div>
         </div>
