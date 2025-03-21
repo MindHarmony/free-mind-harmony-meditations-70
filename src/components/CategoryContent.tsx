@@ -2,8 +2,10 @@
 import { useState, useEffect } from "react";
 import { AudioPlayer } from "./AudioPlayer";
 import { Recording, getRecordingsByCategory, Category } from "@/data/recordings";
-import { Clock, AlertCircle } from "lucide-react";
+import { Clock, AlertCircle, Copy, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 interface CategoryContentProps {
   category: Category;
@@ -12,6 +14,22 @@ interface CategoryContentProps {
 export const CategoryContent = ({ category }: CategoryContentProps) => {
   const [recording, setRecording] = useState<Recording | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [hasCopied, setHasCopied] = useState(false);
+  const { toast } = useToast();
+
+  const handleCopyCode = () => {
+    navigator.clipboard.writeText("CARLA");
+    setHasCopied(true);
+    toast({
+      title: "Discount code copied!",
+      description: "Use code 'CARLA' at checkout for 10% off.",
+    });
+    
+    // Reset copy status after 2 seconds
+    setTimeout(() => {
+      setHasCopied(false);
+    }, 2000);
+  };
 
   useEffect(() => {
     // Simulate loading for smoother transitions
@@ -137,9 +155,39 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
               <p className="text-calm-700 text-sm md:text-base" itemProp="description">
                 Transform your life by becoming a qualified healer and therapist. The Centre For Healing doesn't just teach superior therapy modalities - they equip you with the full business toolkit you need to succeed. From ready-to-use forms & scripts to professional business plans, marketing strategies and ongoing practitioner support.
               </p>
+
+              {/* Discount Code Section */}
+              <div className="mt-4 bg-trust-50 border border-trust-100 rounded-lg p-4">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between">
+                  <div className="mb-3 sm:mb-0">
+                    <h4 className="font-medium text-trust-800">Special Offer: 10% Discount</h4>
+                    <p className="text-trust-700 text-sm mt-1">Use code <span className="font-bold text-trust-900">CARLA</span> at checkout</p>
+                  </div>
+                  <Button 
+                    onClick={handleCopyCode}
+                    variant="outline" 
+                    size="sm"
+                    className="border-trust-200 bg-white text-trust-700 hover:bg-trust-50 hover:text-trust-800"
+                  >
+                    {hasCopied ? (
+                      <>
+                        <Check className="w-4 h-4 mr-1.5" /> Copied!
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-4 h-4 mr-1.5" /> Copy Code
+                      </>
+                    )}
+                  </Button>
+                </div>
+              </div>
+              
               <meta itemProp="priceCurrency" content="USD" />
               <meta itemProp="availability" content="https://schema.org/InStock" />
               <link itemProp="url" href="https://www.thecentreforhealing.com/a/43957/EFJWNTPz" />
+              
+              {/* Add discount offer data */}
+              <meta itemProp="discount" content="10% off with code CARLA" />
             </div>
             
             {/* Structured data for the affiliate relationship */}
@@ -151,6 +199,10 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
                 "url": "https://www.thecentreforhealing.com/a/43957/EFJWNTPz",
                 "logo": "https://www.thecentreforhealing.com/logo.png",
                 "description": "The Centre For Healing offers comprehensive training for healers and therapists with complete business toolkit and ongoing support.",
+                "offers": {
+                  "@type": "Offer",
+                  "discount": "10% off with code CARLA"
+                },
                 "sameAs": [
                   "https://www.facebook.com/thecentreforhealing",
                   "https://www.instagram.com/thecentreforhealing/"
@@ -165,3 +217,4 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
 };
 
 export default CategoryContent;
+
