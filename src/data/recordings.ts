@@ -88,12 +88,14 @@ export const recordings: Recording[] = [
     category: "confidence",
     keywords: ["free hypnosis to boost confidence and motivation", "hypnosis to overcome self-doubt and fear", "inner strength meditation"]
   },
+
+  // Update the sleep recordings with new audio sources
   {
     id: "7",
     title: "Deep Sleep Induction",
     description: "Free sleep hypnosis for deep relaxation. Fall asleep quickly and enjoy restful sleep all night with this best sleep meditation for anxiety and stress.",
     duration: "30:10",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-forest-treasure-138.mp3", // Updated to a more reliable source
     category: "sleep",
     featured: true,
     keywords: ["free sleep hypnosis for deep relaxation", "best sleep meditation for anxiety and stress", "sleep hypnosis"]
@@ -112,16 +114,18 @@ export const recordings: Recording[] = [
     title: "Peaceful Night's Rest",
     description: "10-minute guided meditation for falling asleep fast. Release the day's tension and prepare your mind and body for rejuvenating sleep regardless of anxiety levels.",
     duration: "25:15",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-a-very-happy-christmas-897.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-blurry-future-120.mp3", // Updated to a more reliable source
     category: "sleep",
     keywords: ["10-minute guided meditation for falling asleep fast", "quick sleep meditation", "bedtime relaxation"]
   },
+
+  // Update the anti-bullying recordings with new audio sources
   {
     id: "10",
     title: "Building Resilience",
     description: "Guided meditation for teens dealing with bullying. Develop psychological resilience to stand strong against bullying and peer pressure with this supportive hypnosis session.",
     duration: "21:35",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-blurry-future-120.mp3", // Updated to a more reliable source
     category: "anti-bullying",
     featured: true,
     keywords: ["guided meditation for teens dealing with bullying", "hypnosis for building resilience after bullying", "teen resilience"]
@@ -131,7 +135,7 @@ export const recordings: Recording[] = [
     title: "Teen Confidence Builder",
     description: "Self-love meditation for teenagers with low confidence. Build a strong sense of self-worth and confidence to overcome social challenges and bullying situations.",
     duration: "18:50",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-driving-ambition-32.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-forest-treasure-138.mp3", // Updated to a more reliable source
     category: "anti-bullying",
     keywords: ["self-love meditation for teenagers with low confidence", "teen confidence meditation", "overcoming bullying"]
   },
