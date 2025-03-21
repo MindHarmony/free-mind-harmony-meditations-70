@@ -138,4 +138,14 @@
   .slide-in {
     @apply animate-slide-in;
   }
+  
+  /* Hide any fixed copyright notice regardless of implementation */
+  body > div:not(#root),
+  [id*="copyright-notice"],
+  [class*="copyright-notice"],
+  [style*="position: fixed"][style*="bottom"],
+  [style*="position:fixed"][style*="bottom"] {
+    display: none !important;
+    visibility: hidden !important;
+  }
 }
