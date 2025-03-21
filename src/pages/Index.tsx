@@ -103,12 +103,14 @@ const Index = () => {
                 <Link 
                   to="/privacy" 
                   className="text-trust-500 hover:text-trust-600 transition-colors cursor-pointer"
+                  aria-label="View Privacy Policy"
                 >
                   Privacy Policy
                 </Link>
                 <Link 
                   to="/cookie-policy" 
                   className="text-trust-500 hover:text-trust-600 transition-colors cursor-pointer"
+                  aria-label="View Cookie Policy"
                 >
                   Cookie Policy
                 </Link>

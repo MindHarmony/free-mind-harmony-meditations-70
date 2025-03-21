@@ -1,10 +1,17 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Privacy = () => {
   return (
     <div className="bg-background min-h-screen py-12">
+      <Helmet>
+        <title>Privacy Policy - Mind Harmony</title>
+        <meta name="description" content="Privacy Policy for Mind Harmony application" />
+        <link rel="canonical" href="https://mindharmony.com/privacy" />
+      </Helmet>
+      
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="mb-8">
           <Link to="/" className="text-trust-600 hover:text-trust-700 flex items-center">
