@@ -32,7 +32,7 @@ const Index = () => {
     "anti-bullying": "Supportive meditations for teens dealing with bullying, building resilience, and developing self-love techniques to stay emotionally strong.",
     "personal-growth": "Manifest your dreams and visualize your ideal future self with our guided meditation recordings for personal growth, abundance, and positive change."
   };
-
+  
   // Function to handle navigation
   const handleNavigate = (path: string) => {
     window.location.href = path;
@@ -54,10 +54,10 @@ const Index = () => {
           onCategoryChange={handleCategoryChange}
         />
         
-        {/* Main Content */}
+        {/* Main Content - removing any potential sticky behaviors */}
         <div className="flex-1 overflow-y-auto p-4 md:p-8">
           <div className="max-w-4xl mx-auto">
-            <header className="mb-6 md:mb-10">
+            <header className="mb-6 md:mb-10 relative">
               {/* Breadcrumbs for better navigation */}
               <Breadcrumb className="mb-4">
                 <BreadcrumbList>
@@ -79,7 +79,7 @@ const Index = () => {
               </p>
             </header>
 
-            {/* Ad Space (Header) - Hide on small mobile screens */}
+            {/* Ad Space (Header) - Hide on small mobile screens - removing any fixed positioning */}
             <div className="hidden sm:block mb-6 md:mb-10 bg-calm-50 border border-calm-100 rounded-xl p-4 text-center">
               <p className="text-calm-500 text-sm">Advertisement Space</p>
               <div className="h-16 flex items-center justify-center border border-dashed border-calm-200 rounded-lg mt-2">
@@ -88,11 +88,11 @@ const Index = () => {
             </div>
             
             {/* Category Content - Main */}
-            <main>
+            <main className="relative">
               <CategoryContent category={activeCategory} />
               
-              {/* Ad Space (Side) - Modified to remove any potential sticky copyright */}
-              <div className="mt-6 md:mt-10 bg-calm-50 border border-calm-100 rounded-xl p-4 text-center">
+              {/* Ad Space - removing any sticky positioning */}
+              <div className="mt-6 md:mt-10 bg-calm-50 border border-calm-100 rounded-xl p-4 text-center relative">
                 <p className="text-calm-500 text-sm">Advertisement Space</p>
                 <div className="h-24 md:h-48 flex items-center justify-center border border-dashed border-calm-200 rounded-lg mt-2">
                   <span className="text-calm-400">Google Ad</span>
@@ -100,7 +100,7 @@ const Index = () => {
               </div>
             </main>
 
-            <footer className="mt-6 md:mt-10 pt-4 md:pt-6 border-t border-calm-100 text-center text-xs md:text-sm text-calm-500">
+            <footer className="mt-6 md:mt-10 pt-4 md:pt-6 border-t border-calm-100 text-center text-xs md:text-sm text-calm-500 relative">
               <p>© {new Date().getFullYear()} Mind Harmony. All rights reserved.</p>
               <p className="mt-1 mb-3">Free hypnosis recordings for personal development.</p>
               <div className="flex justify-center space-x-6">
