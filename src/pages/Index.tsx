@@ -48,17 +48,17 @@ const Index = () => {
         <link rel="canonical" href={`https://mindharmony.com/`} />
       </Helmet>
       
-      <div className="flex h-screen overflow-hidden">
+      <div className="flex h-screen overflow-hidden" style={{position: 'static'}}>
         {/* Sidebar - Navigation */}
         <Sidebar 
           activeCategory={activeCategory} 
           onCategoryChange={handleCategoryChange}
         />
         
-        {/* Main Content - removing any sticky behaviors */}
-        <div className="flex-1 overflow-y-auto p-4 md:p-8 relative">
-          <div className="max-w-4xl mx-auto">
-            <header className="mb-6 md:mb-10 relative">
+        {/* Main Content - all static positioning */}
+        <div className="flex-1 overflow-y-auto p-4 md:p-8" style={{position: 'static'}}>
+          <div className="max-w-4xl mx-auto" style={{position: 'static'}}>
+            <header className="mb-6 md:mb-10" style={{position: 'static'}}>
               {/* Breadcrumbs for better navigation */}
               <Breadcrumb className="mb-4">
                 <BreadcrumbList>
@@ -80,8 +80,8 @@ const Index = () => {
               </p>
             </header>
 
-            {/* Ad Space (Header) - Hide on small mobile screens - removing any fixed positioning */}
-            <div className="hidden sm:block mb-6 md:mb-10 bg-calm-50 border border-calm-100 rounded-xl p-4 text-center relative">
+            {/* Ad Space (Header) - Hide on small mobile screens */}
+            <div className="hidden sm:block mb-6 md:mb-10 bg-calm-50 border border-calm-100 rounded-xl p-4 text-center" style={{position: 'static'}}>
               <p className="text-calm-500 text-sm">Advertisement Space</p>
               <div className="h-16 flex items-center justify-center border border-dashed border-calm-200 rounded-lg mt-2">
                 <span className="text-calm-400">Google Ad</span>
@@ -89,11 +89,11 @@ const Index = () => {
             </div>
             
             {/* Category Content - Main */}
-            <main className="relative">
+            <main style={{position: 'static'}}>
               <CategoryContent category={activeCategory} />
               
               {/* Ad Space - ensuring it's not sticky */}
-              <div className="mt-6 md:mt-10 bg-calm-50 border border-calm-100 rounded-xl p-4 text-center relative">
+              <div className="mt-6 md:mt-10 bg-calm-50 border border-calm-100 rounded-xl p-4 text-center" style={{position: 'static'}}>
                 <p className="text-calm-500 text-sm">Advertisement Space</p>
                 <div className="h-24 md:h-48 flex items-center justify-center border border-dashed border-calm-200 rounded-lg mt-2">
                   <span className="text-calm-400">Google Ad</span>
@@ -101,8 +101,8 @@ const Index = () => {
               </div>
             </main>
 
-            {/* Footer - ensuring it's not sticky */}
-            <footer className="mt-6 md:mt-10 pt-4 md:pt-6 border-t border-calm-100 text-center text-xs md:text-sm text-calm-500 relative">
+            {/* Footer - ensuring it's absolutely not sticky */}
+            <footer className="mt-6 md:mt-10 pt-4 md:pt-6 border-t border-calm-100 text-center text-xs md:text-sm text-calm-500" style={{position: 'static'}}>
               <p>© {new Date().getFullYear()} Mind Harmony. All rights reserved.</p>
               <p className="mt-1 mb-3">Free hypnosis recordings for personal development.</p>
               <div className="flex justify-center space-x-6">

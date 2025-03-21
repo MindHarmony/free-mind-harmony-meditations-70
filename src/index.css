@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -89,19 +88,21 @@
 @layer base {
   * {
     @apply border-border;
+    position: static !important; /* Override any potential sticky positioning */
   }
 
   body {
     @apply bg-background text-foreground font-sans;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    position: relative; /* Ensure no fixed positioning on body */
+    position: static !important; /* Prevent any sticking */
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    transform: translateZ(0); /* Force hardware acceleration */
   }
 
   /* Audio player styles */
   .audio-player {
     @apply bg-white rounded-2xl shadow-md transition-all duration-300;
-    position: relative; /* Ensure player is not sticky */
+    position: static !important; /* Ensure player is not sticky */
   }
 
   .audio-player:hover {
@@ -143,15 +144,30 @@
   }
   
   /* Ensure footer and other elements aren't sticky */
-  footer {
-    position: relative !important;
+  footer, header, main, section, article, div {
+    position: static !important;
     bottom: auto !important;
     left: auto !important;
     right: auto !important;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
   }
 }
 
 /* Override any potential sticky positioning from external CSS */
-.sticky, [class*="sticky-"] {
-  position: relative !important;
+.sticky, [class*="sticky-"], [style*="position:fixed"], [style*="position: fixed"] {
+  position: static !important;
+  top: auto !important;
+  bottom: auto !important;
+}
+
+/* Force all elements to use the normal flow */
+#root, #root > div, #root > div > div, main, section, article, aside, header, footer, nav {
+  position: static !important;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Ensure elements in the flow don't stick */
+html {
+  overflow-y: auto !important;
 }

@@ -5,6 +5,7 @@
   padding: 2rem;
   text-align: center;
   position: relative; /* Ensure no fixed positioning */
+  transform: translate3d(0, 0, 0); /* Force hardware acceleration but prevent sticking */
 }
 
 .logo {
@@ -45,11 +46,18 @@
 
 /* Ensure no elements have fixed or sticky positioning unless explicitly needed */
 html, body, #root, main, div, footer {
-  position: relative;
+  position: relative !important;
+  transform: translate3d(0, 0, 0); /* Force hardware acceleration */
 }
 
 /* Ensure proper scrolling without sticky elements */
 html, body {
   overflow-x: hidden;
   height: 100%;
+}
+
+/* Additional fix to prevent any sticking */
+* {
+  position: static !important;
+  transform: translateZ(0);
 }
