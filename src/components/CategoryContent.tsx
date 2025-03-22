@@ -149,27 +149,27 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
               />
             </a>
             
-            {/* Affiliate Text with enhanced styling */}
-            <div className="text-left mt-3 bg-gradient-to-r from-trust-50 to-purple-50 p-5 rounded-xl border border-trust-100" itemProp="offers" itemScope itemType="https://schema.org/Offer">
-              <h3 className="text-xl font-bold text-trust-800 mb-3 tracking-tight" itemProp="name">
+            {/* Affiliate Text with enhanced styling - COLORS UPDATED TO GREEN */}
+            <div className="text-left mt-3 bg-gradient-to-r from-emerald-50 to-green-50 p-5 rounded-xl border border-emerald-100" itemProp="offers" itemScope itemType="https://schema.org/Offer">
+              <h3 className="text-xl font-bold text-emerald-800 mb-3 tracking-tight" itemProp="name">
                 The Centre For Healing - Therapy Training Programs
               </h3>
               <p className="text-calm-800 text-base leading-relaxed" itemProp="description">
-                <span className="font-medium text-purple-700">Transform your life</span> by becoming a qualified healer and therapist. The Centre For Healing doesn't just teach superior therapy modalities - they equip you with the <span className="font-medium text-trust-700">full business toolkit</span> you need to succeed. From ready-to-use forms & scripts to professional business plans, marketing strategies and ongoing practitioner support.
+                <span className="font-medium text-emerald-700">Transform your life</span> by becoming a qualified healer and therapist. The Centre For Healing doesn't just teach superior therapy modalities - they equip you with the <span className="font-medium text-green-700">full business toolkit</span> you need to succeed. From ready-to-use forms & scripts to professional business plans, marketing strategies and ongoing practitioner support.
               </p>
 
-              {/* Discount Code Section with enhanced visual appeal */}
-              <div className="mt-5 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100 rounded-lg p-5 shadow-sm">
+              {/* Discount Code Section with enhanced visual appeal - COLORS UPDATED TO GREEN */}
+              <div className="mt-5 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100 rounded-lg p-5 shadow-sm">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between">
                   <div className="mb-3 sm:mb-0">
-                    <h4 className="font-bold text-lg text-purple-800">Special Offer: 10% Discount</h4>
-                    <p className="text-purple-700 mt-1">Use code <span className="font-bold text-purple-900 text-lg tracking-wide bg-white px-2 py-0.5 rounded border border-purple-200">CARLA</span> at checkout</p>
+                    <h4 className="font-bold text-lg text-emerald-800">Special Offer: 10% Discount</h4>
+                    <p className="text-green-700 mt-1">Use code <span className="font-bold text-emerald-900 text-lg tracking-wide bg-white px-2 py-0.5 rounded border border-green-200">CARLA</span> at checkout</p>
                   </div>
                   <Button 
                     onClick={handleCopyCode}
                     variant="outline" 
                     size="sm"
-                    className="border-purple-200 bg-white text-purple-700 hover:bg-purple-50 hover:text-purple-800 font-medium shadow-sm"
+                    className="border-green-200 bg-white text-emerald-700 hover:bg-green-50 hover:text-emerald-800 font-medium shadow-sm"
                   >
                     {hasCopied ? (
                       <>
