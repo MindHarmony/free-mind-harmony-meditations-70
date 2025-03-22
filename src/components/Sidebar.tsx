@@ -55,8 +55,8 @@ export const Sidebar = ({
       icon: <User className="w-5 h-5" />
     },
     {
-      id: "nervous-system",
-      name: categoryNames["nervous-system"],
+      id: "inner-calm",
+      name: categoryNames["inner-calm"],
       icon: <Brain className="w-5 h-5" />
     }
   ];
