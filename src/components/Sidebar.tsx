@@ -76,16 +76,16 @@ export const Sidebar = ({
         {!isCollapsed ? (
           <div className="flex items-center">
             <div className="h-9 w-9 bg-trust-100 rounded-full flex items-center justify-center overflow-hidden">
-              <img src="/lovable-uploads/d367f517-3fe1-4872-9d31-928e8adbb8d4.png" alt="Inner Calm" className="h-full w-full object-contain" />
+              <img src="/lovable-uploads/d367f517-3fe1-4872-9d31-928e8adbb8d4.png" alt="Mind Harmony" className="h-full w-full object-contain" />
             </div>
             <h1 className="ml-2 font-semibold text-trust-800 text-lg">
-              Inner Calm
+              Mind Harmony
             </h1>
           </div>
         ) : (
           <div className="flex justify-center">
             <div className="w-10 h-10 bg-trust-100 rounded-full flex items-center justify-center overflow-hidden">
-              <img src="/lovable-uploads/d367f517-3fe1-4872-9d31-928e8adbb8d4.png" alt="Inner Calm" className="h-full w-full object-contain" />
+              <img src="/lovable-uploads/d367f517-3fe1-4872-9d31-928e8adbb8d4.png" alt="Mind Harmony" className="h-full w-full object-contain" />
             </div>
           </div>
         )}
