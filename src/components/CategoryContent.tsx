@@ -125,7 +125,7 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
             </script>
           </article>
           
-          {/* SEO Optimized Affiliate Banner with Structured Data */}
+          {/* SEO Optimized Affiliate Banner with Structured Data - REDESIGNED FOR BETTER VISIBILITY */}
           <section itemScope itemType="https://schema.org/Product" className="affiliate-section">
             <meta itemProp="name" content="The Centre for Healing - Therapy Training Programs" />
             <meta itemProp="description" content="Comprehensive training for healers and therapists with business toolkit, marketing strategies, and professional support." />
@@ -149,25 +149,27 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
               />
             </a>
             
-            {/* Affiliate Text with semantic HTML */}
-            <div className="text-left mt-3" itemProp="offers" itemScope itemType="https://schema.org/Offer">
-              <h3 className="text-lg font-medium text-calm-900 mb-2" itemProp="name">The Centre For Healing - Therapy Training Programs</h3>
-              <p className="text-calm-700 text-sm md:text-base" itemProp="description">
-                Transform your life by becoming a qualified healer and therapist. The Centre For Healing doesn't just teach superior therapy modalities - they equip you with the full business toolkit you need to succeed. From ready-to-use forms & scripts to professional business plans, marketing strategies and ongoing practitioner support.
+            {/* Affiliate Text with enhanced styling */}
+            <div className="text-left mt-3 bg-gradient-to-r from-trust-50 to-purple-50 p-5 rounded-xl border border-trust-100" itemProp="offers" itemScope itemType="https://schema.org/Offer">
+              <h3 className="text-xl font-bold text-trust-800 mb-3 tracking-tight" itemProp="name">
+                The Centre For Healing - Therapy Training Programs
+              </h3>
+              <p className="text-calm-800 text-base leading-relaxed" itemProp="description">
+                <span className="font-medium text-purple-700">Transform your life</span> by becoming a qualified healer and therapist. The Centre For Healing doesn't just teach superior therapy modalities - they equip you with the <span className="font-medium text-trust-700">full business toolkit</span> you need to succeed. From ready-to-use forms & scripts to professional business plans, marketing strategies and ongoing practitioner support.
               </p>
 
-              {/* Discount Code Section */}
-              <div className="mt-4 bg-trust-50 border border-trust-100 rounded-lg p-4">
+              {/* Discount Code Section with enhanced visual appeal */}
+              <div className="mt-5 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100 rounded-lg p-5 shadow-sm">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between">
                   <div className="mb-3 sm:mb-0">
-                    <h4 className="font-medium text-trust-800">Special Offer: 10% Discount</h4>
-                    <p className="text-trust-700 text-sm mt-1">Use code <span className="font-bold text-trust-900">CARLA</span> at checkout</p>
+                    <h4 className="font-bold text-lg text-purple-800">Special Offer: 10% Discount</h4>
+                    <p className="text-purple-700 mt-1">Use code <span className="font-bold text-purple-900 text-lg tracking-wide bg-white px-2 py-0.5 rounded border border-purple-200">CARLA</span> at checkout</p>
                   </div>
                   <Button 
                     onClick={handleCopyCode}
                     variant="outline" 
                     size="sm"
-                    className="border-trust-200 bg-white text-trust-700 hover:bg-trust-50 hover:text-trust-800"
+                    className="border-purple-200 bg-white text-purple-700 hover:bg-purple-50 hover:text-purple-800 font-medium shadow-sm"
                   >
                     {hasCopied ? (
                       <>
@@ -217,4 +219,3 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
 };
 
 export default CategoryContent;
-
