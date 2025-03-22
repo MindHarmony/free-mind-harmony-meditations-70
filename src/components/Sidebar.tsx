@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { HeartPulse, Star, Moon, Shield, User, Menu, FileText, Info, Brain } from "lucide-react";
+import { HeartPulse, Star, Moon, Shield, User, Menu, FileText, Info, Brain, Cookie } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Category, categoryNames } from "@/data/recordings";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -63,6 +63,12 @@ export const Sidebar = ({
 
   const handleNavigate = (path: string) => {
     window.location.href = path;
+  };
+
+  const handleOpenCookieSettings = () => {
+    // Dispatch a custom event that CookieConsent component will listen for
+    const event = new CustomEvent('open-cookie-settings');
+    window.dispatchEvent(event);
   };
 
   return (
@@ -170,6 +176,21 @@ export const Sidebar = ({
               )}
             >
               Privacy Policy
+            </span>
+          </button>
+          <button
+            onClick={handleOpenCookieSettings}
+            className="w-full flex items-center px-2 py-2 rounded-lg transition-all duration-200 text-calm-600 hover:bg-trust-50 hover:text-trust-700"
+            aria-label="Cookie Settings"
+          >
+            <span className="flex-shrink-0"><Cookie className="w-5 h-5" /></span>
+            <span 
+              className={cn(
+                "ml-3 transition-opacity duration-300",
+                isCollapsed ? "opacity-0 w-0 overflow-hidden" : "opacity-100"
+              )}
+            >
+              Cookie Settings
             </span>
           </button>
         </nav>

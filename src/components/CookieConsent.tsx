@@ -48,6 +48,18 @@ export const CookieConsent = () => {
       // Parse stored consent
       setConsentStatus(JSON.parse(storedConsent));
     }
+
+    // Listen for the custom event from the sidebar
+    const handleOpenCookieSettings = () => {
+      setOpen(true);
+    };
+
+    window.addEventListener('open-cookie-settings', handleOpenCookieSettings);
+
+    // Cleanup event listener
+    return () => {
+      window.removeEventListener('open-cookie-settings', handleOpenCookieSettings);
+    };
   }, []);
 
   const handleAcceptAll = () => {
@@ -208,17 +220,7 @@ export const CookieConsent = () => {
         </AlertDialogContent>
       </AlertDialog>
 
-      {/* Floating button to re-open cookie settings after they've been set */}
-      {consentStatus.accepted && (
-        <Button
-          variant="outline"
-          size="sm"
-          className="fixed bottom-4 left-4 z-50 text-xs px-2 py-1 h-auto opacity-70 hover:opacity-100"
-          onClick={() => setOpen(true)}
-        >
-          Cookie Settings
-        </Button>
-      )}
+      {/* Removing the floating button as it's now in the sidebar */}
     </>
   );
 };
