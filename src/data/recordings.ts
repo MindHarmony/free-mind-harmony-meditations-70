@@ -16,14 +16,16 @@ export type Category =
   | "confidence"
   | "sleep"
   | "anti-bullying"
-  | "personal-growth";
+  | "personal-growth"
+  | "nervous-system"; // Added new category
 
 export const categoryNames: Record<Category, string> = {
   "stress-anxiety": "Anxiety",
   "confidence": "Confidence",
   "sleep": "Sleep & Insomnia",
   "anti-bullying": "Teenage Anti-Bullying",
-  "personal-growth": "Future Self Visualization"
+  "personal-growth": "Future Self Visualization",
+  "nervous-system": "Nervous System Regulation" // Added new category name
 };
 
 // Sample recordings data
@@ -157,7 +159,7 @@ export const recordings: Recording[] = [
     category: "personal-growth",
     featured: true,
     embedType: "soundcloud",
-    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2056845500&color=%23ff5500&auto_play=false&hide_related=false&show_user=true&show_reposts=false&show_teaser=false",
+    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2056845500&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
     keywords: ["guided visualization meditation to manifest success", "future self meditation for personal growth and clarity", "manifest your best self"]
   },
   {
@@ -177,6 +179,20 @@ export const recordings: Recording[] = [
     audioSrc: "https://assets.mixkit.co/music/preview/mixkit-forest-treasure-138.mp3",
     category: "personal-growth",
     keywords: ["law of attraction meditation for abundance and confidence", "visualization exercise to attract positivity and wealth", "abundance meditation"]
+  },
+  
+  // Adding new nervous system recording
+  {
+    id: "16",
+    title: "Nervous System Meditation",
+    description: "In order to go from surviving to thriving we need to regulate our nervous system. Only then can we unlock the key to our full potential and leading lives of purpose and fulfilment.",
+    duration: "20:15", // Approximate duration - adjust if known
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3", // Fallback audio
+    embedType: "soundcloud",
+    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2060244268&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
+    category: "nervous-system",
+    featured: true,
+    keywords: ["nervous system regulation", "meditation for regulation", "surviving to thriving", "purpose and fulfillment"]
   }
 ];
 

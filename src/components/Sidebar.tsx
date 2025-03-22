@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from "react";
-import { HeartPulse, Star, Moon, Shield, User, Menu, FileText, Info } from "lucide-react";
+import { HeartPulse, Star, Moon, Shield, User, Menu, FileText, Info, Brain } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Category, categoryNames } from "@/data/recordings";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -53,6 +52,11 @@ export const Sidebar = ({
       id: "personal-growth",
       name: categoryNames["personal-growth"],
       icon: <User className="w-5 h-5" />
+    },
+    {
+      id: "nervous-system",
+      name: categoryNames["nervous-system"],
+      icon: <Brain className="w-5 h-5" />
     }
   ];
 
