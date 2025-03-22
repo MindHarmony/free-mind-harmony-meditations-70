@@ -44,10 +44,10 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Mind Harmony - {categoryNames[activeCategory]} Hypnosis & Meditation</title>
+        <title>Inner Calm - {categoryNames[activeCategory]} Hypnosis & Meditation</title>
         <meta name="description" content={categoryDescriptions[activeCategory]} />
         <meta name="keywords" content={categoryKeywords[activeCategory]} />
-        <link rel="canonical" href={`https://mindharmony.com/`} />
+        <link rel="canonical" href={`https://innercalm.com/`} />
       </Helmet>
       
       <div className="flex h-screen overflow-hidden" style={{position: 'static'}}>
@@ -65,7 +65,7 @@ const Index = () => {
               <Breadcrumb className="mb-4">
                 <BreadcrumbList>
                   <BreadcrumbItem>
-                    <BreadcrumbPage>Mind Harmony</BreadcrumbPage>
+                    <BreadcrumbPage>Inner Calm</BreadcrumbPage>
                   </BreadcrumbItem>
                   <BreadcrumbItem>
                     <BreadcrumbPage>{categoryNames[activeCategory]}</BreadcrumbPage>
@@ -93,7 +93,7 @@ const Index = () => {
 
             {/* Footer - ensuring it's absolutely not sticky */}
             <footer className="mt-6 md:mt-10 pt-4 md:pt-6 border-t border-calm-100 text-center text-xs md:text-sm text-calm-500" style={{position: 'static'}}>
-              <p>© {new Date().getFullYear()} Mind Harmony. All rights reserved.</p>
+              <p>© {new Date().getFullYear()} Inner Calm. All rights reserved.</p>
               <p className="mt-1 mb-3">Free hypnosis recordings for personal development.</p>
               <div className="flex justify-center space-x-6">
                 <button 

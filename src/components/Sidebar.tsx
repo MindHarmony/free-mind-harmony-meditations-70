@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { HeartPulse, Star, Moon, Shield, User, Menu, FileText, Info, Brain } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -75,16 +76,16 @@ export const Sidebar = ({
         {!isCollapsed ? (
           <div className="flex items-center">
             <div className="h-9 w-9 bg-trust-100 rounded-full flex items-center justify-center overflow-hidden">
-              <img src="/lovable-uploads/d367f517-3fe1-4872-9d31-928e8adbb8d4.png" alt="Mind Harmony" className="h-full w-full object-contain" />
+              <img src="/lovable-uploads/d367f517-3fe1-4872-9d31-928e8adbb8d4.png" alt="Inner Calm" className="h-full w-full object-contain" />
             </div>
             <h1 className="ml-2 font-semibold text-trust-800 text-lg">
-              Mind Harmony
+              Inner Calm
             </h1>
           </div>
         ) : (
           <div className="flex justify-center">
             <div className="w-10 h-10 bg-trust-100 rounded-full flex items-center justify-center overflow-hidden">
-              <img src="/lovable-uploads/d367f517-3fe1-4872-9d31-928e8adbb8d4.png" alt="Mind Harmony" className="h-full w-full object-contain" />
+              <img src="/lovable-uploads/d367f517-3fe1-4872-9d31-928e8adbb8d4.png" alt="Inner Calm" className="h-full w-full object-contain" />
             </div>
           </div>
         )}
@@ -144,7 +145,7 @@ export const Sidebar = ({
           <button
             onClick={() => handleNavigate("/about")}
             className="w-full flex items-center px-2 py-2 rounded-lg transition-all duration-200 text-calm-600 hover:bg-trust-50 hover:text-trust-700"
-            aria-label="About Mind Harmony"
+            aria-label="About Inner Calm"
           >
             <span className="flex-shrink-0"><Info className="w-5 h-5" /></span>
             <span 
@@ -177,7 +178,7 @@ export const Sidebar = ({
       {!isCollapsed && (
         <div className="absolute bottom-6 left-0 right-0 px-4">
           <div className="text-center text-xs text-calm-500">
-            <p>© {new Date().getFullYear()} Mind Harmony</p>
+            <p>© {new Date().getFullYear()} Inner Calm</p>
             <p className="mt-1">All rights reserved</p>
           </div>
         </div>
