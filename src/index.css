@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -97,6 +98,11 @@
     position: static !important; /* Prevent any sticking */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     transform: translateZ(0); /* Force hardware acceleration */
+  }
+
+  /* Add this to ensure consistent header alignment */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-left w-full;
   }
 
   /* Audio player styles */
