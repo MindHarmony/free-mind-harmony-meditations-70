@@ -64,13 +64,13 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
           <article className="bg-white rounded-2xl shadow-md p-6" itemScope itemType="https://schema.org/AudioObject">
             <div className="mb-5">
               <div className="flex justify-between items-start mb-2">
-                <h2 className="text-xl font-medium text-calm-900" itemProp="name">{recording.title}</h2>
-                <div className="flex items-center text-xs text-calm-500">
+                <h2 className="text-xl font-medium text-calm-900 text-left w-full" itemProp="name">{recording.title}</h2>
+                <div className="flex items-center text-xs text-calm-500 flex-shrink-0">
                   <Clock className="w-3.5 h-3.5 mr-1" />
                   <span itemProp="duration">{recording.duration}</span>
                 </div>
               </div>
-              <p className="text-calm-600 mt-2" itemProp="description">{recording.description}</p>
+              <p className="text-calm-600 mt-2 text-left" itemProp="description">{recording.description}</p>
               
               {/* Keywords for SEO - hidden visually but available for search engines */}
               {recording.keywords && (
@@ -91,7 +91,7 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
                 <div className="flex items-start">
                   <AlertCircle className="w-5 h-5 text-amber-500 mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h3 className="font-medium text-amber-800">Coming Soon</h3>
+                    <h3 className="font-medium text-amber-800 text-left">Coming Soon</h3>
                     <p className="text-amber-700 text-sm mt-1">
                       We're currently updating our {category === "sleep" ? "Sleep & Insomnia" : "Teenage Anti-Bullying"} recordings. 
                       Please check back soon for new meditation content!
