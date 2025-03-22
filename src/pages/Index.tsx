@@ -80,25 +80,13 @@ const Index = () => {
               </p>
             </header>
 
-            {/* Ad Space (Header) - Hide on small mobile screens */}
-            <div className="hidden sm:block mb-6 md:mb-10 bg-calm-50 border border-calm-100 rounded-xl p-4 text-center" style={{position: 'static'}}>
-              <p className="text-calm-500 text-sm">Advertisement Space</p>
-              <div className="h-16 flex items-center justify-center border border-dashed border-calm-200 rounded-lg mt-2">
-                <span className="text-calm-400">Google Ad</span>
-              </div>
-            </div>
+            {/* Ad Space removed temporarily */}
             
             {/* Category Content - Main */}
             <main style={{position: 'static'}}>
               <CategoryContent category={activeCategory} />
               
-              {/* Ad Space - ensuring it's not sticky */}
-              <div className="mt-6 md:mt-10 bg-calm-50 border border-calm-100 rounded-xl p-4 text-center" style={{position: 'static'}}>
-                <p className="text-calm-500 text-sm">Advertisement Space</p>
-                <div className="h-24 md:h-48 flex items-center justify-center border border-dashed border-calm-200 rounded-lg mt-2">
-                  <span className="text-calm-400">Google Ad</span>
-                </div>
-              </div>
+              {/* Ad Space removed temporarily */}
             </main>
 
             {/* Footer - ensuring it's absolutely not sticky */}
