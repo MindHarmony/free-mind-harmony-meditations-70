@@ -18,11 +18,18 @@ const GoogleAnalytics = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Only load Google Analytics if analytics cookies are allowed
-    if (isAllowed('analytics')) {
+    // Add Google Analytics script unconditionally for verification
+    // But only enable tracking if consent is given
+    const loadGoogleAnalytics = () => {
+      // Check if script already exists
+      if (document.getElementById('google-analytics')) {
+        return;
+      }
+
       // Add Google Analytics script dynamically
       const script = document.createElement('script');
       script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+      script.id = 'google-analytics';
       script.async = true;
       document.head.appendChild(script);
 
@@ -32,22 +39,31 @@ const GoogleAnalytics = () => {
         window.dataLayer.push(arguments);
       };
       window.gtag('js', new Date());
-      window.gtag('config', GA_MEASUREMENT_ID, {
-        send_page_view: false, // We'll send page views manually
+      
+      // Configure with consent mode
+      window.gtag('consent', 'default', {
+        'analytics_storage': isAllowed('analytics') ? 'granted' : 'denied'
       });
+      
+      window.gtag('config', GA_MEASUREMENT_ID);
+      
+      console.log('Google Analytics initialized');
+    };
 
-      // Remove the script when component unmounts
-      return () => {
-        if (document.head.contains(script)) {
-          document.head.removeChild(script);
-        }
-      };
+    loadGoogleAnalytics();
+
+    // Update consent state whenever it changes
+    if (window.gtag) {
+      window.gtag('consent', 'update', {
+        'analytics_storage': isAllowed('analytics') ? 'granted' : 'denied'
+      });
+      console.log('Analytics consent updated:', isAllowed('analytics') ? 'granted' : 'denied');
     }
   }, [isAllowed]);
 
   // Track page views when location changes
   useEffect(() => {
-    if (isAllowed('analytics') && window.gtag) {
+    if (window.gtag && isAllowed('analytics')) {
       window.gtag('event', 'page_view', {
         page_title: document.title,
         page_location: window.location.href,
