@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -6,17 +5,14 @@ import Sidebar from "@/components/Sidebar";
 import { CategoryContent } from "@/components/CategoryContent";
 import { Category, categoryNames } from "@/data/recordings";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useAnalytics } from "@/hooks/use-analytics";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbPage } from "@/components/ui/breadcrumb";
 
 const Index = () => {
   const [activeCategory, setActiveCategory] = useState<Category>("stress-anxiety");
   const isMobile = useIsMobile();
-  const { trackEvent } = useAnalytics();
   
   const handleCategoryChange = (category: Category) => {
     setActiveCategory(category);
-    trackEvent('category_change', { category_name: categoryNames[category] });
   };
 
   // SEO keyword mapping for each category
