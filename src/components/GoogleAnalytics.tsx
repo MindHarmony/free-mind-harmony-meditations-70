@@ -17,48 +17,22 @@ const GoogleAnalytics = () => {
   const { isAllowed } = useCookieConsent();
   const location = useLocation();
 
+  // Initialize Google Analytics
   useEffect(() => {
-    // Add Google Analytics script unconditionally for verification
-    // But only enable tracking if consent is given
-    const loadGoogleAnalytics = () => {
-      // Check if script already exists
-      if (document.getElementById('google-analytics')) {
-        return;
-      }
-
-      // Add Google Analytics script dynamically
-      const script = document.createElement('script');
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-      script.id = 'google-analytics';
-      script.async = true;
-      document.head.appendChild(script);
-
-      // Initialize Google Analytics
+    // Define the gtag function if it doesn't exist yet
+    if (!window.gtag) {
       window.dataLayer = window.dataLayer || [];
       window.gtag = function gtag() {
         window.dataLayer.push(arguments);
       };
-      window.gtag('js', new Date());
-      
-      // Configure with consent mode
-      window.gtag('consent', 'default', {
-        'analytics_storage': isAllowed('analytics') ? 'granted' : 'denied'
-      });
-      
-      window.gtag('config', GA_MEASUREMENT_ID);
-      
-      console.log('Google Analytics initialized');
-    };
-
-    loadGoogleAnalytics();
-
-    // Update consent state whenever it changes
-    if (window.gtag) {
-      window.gtag('consent', 'update', {
-        'analytics_storage': isAllowed('analytics') ? 'granted' : 'denied'
-      });
-      console.log('Analytics consent updated:', isAllowed('analytics') ? 'granted' : 'denied');
     }
+    
+    // Update consent state whenever it changes
+    window.gtag('consent', 'update', {
+      'analytics_storage': isAllowed('analytics') ? 'granted' : 'denied'
+    });
+    
+    console.log('Analytics consent updated:', isAllowed('analytics') ? 'granted' : 'denied');
   }, [isAllowed]);
 
   // Track page views when location changes
