@@ -11,6 +11,7 @@ import CookiePolicy from "./pages/CookiePolicy";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import CookieConsent from "./components/CookieConsent";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 const queryClient = new QueryClient();
 
@@ -18,10 +19,11 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <HelmetProvider>
       <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <CookieConsent />
         <BrowserRouter>
+          <GoogleAnalytics />
+          <Toaster />
+          <Sonner />
+          <CookieConsent />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/privacy" element={<Privacy />} />
