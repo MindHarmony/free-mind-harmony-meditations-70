@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useCookieConsent } from '@/hooks/use-cookie-consent';
 
-// Replace this with your actual Google Analytics measurement ID
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+// Your Google Analytics measurement ID
+const GA_MEASUREMENT_ID = 'G-QZLYDT5Q8K';
 
 declare global {
   interface Window {
