@@ -4,12 +4,45 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 const About = () => {
+  // AI-friendly about page schema
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Mind Harmony",
+    "description": "Learn about Mind Harmony - your source for free guided meditation and hypnosis recordings",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Mind Harmony",
+      "description": "Provider of free meditation and hypnosis recordings for mental wellness",
+      "email": "carla@theinfinitygroup.nz",
+      "member": {
+        "@type": "OrganizationRole",
+        "member": {
+          "@type": "Person",
+          "name": "Carla"
+        },
+        "roleName": "Contact"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "The Infinity Group NZ Limited"
+      }
+    }
+  };
+
   return (
     <div className="bg-background min-h-screen py-12">
       <Helmet>
         <title>About Us - Mind Harmony</title>
         <meta name="description" content="Learn about Mind Harmony - your source for free guided meditation and hypnosis recordings" />
         <link rel="canonical" href="https://mindharmony.com/about" />
+        {/* AI-friendly metadata */}
+        <meta name="ai-index" content="allow" />
+        <meta name="ai-crawler" content="index,follow" />
+        <meta name="ai-classification" content="about page, company information, mental wellness" />
+        <script type="application/ld+json">
+          {JSON.stringify(aboutPageSchema)}
+        </script>
       </Helmet>
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6">

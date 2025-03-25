@@ -2,4 +2,28 @@
 User-agent: *
 Allow: /
 
+# AI crawlers specific instructions
+User-agent: GPTBot
+Allow: /
+Allow: /about
+Allow: /privacy
+Allow: /cookie-policy
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Allow: /about
+
+User-agent: Bard
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Make sure AI crawlers can find the sitemap
 Sitemap: https://mindharmony.com/sitemap.xml

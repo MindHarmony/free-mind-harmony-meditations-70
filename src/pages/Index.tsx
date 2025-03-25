@@ -41,7 +41,7 @@ const Index = () => {
     window.location.href = path;
   };
   
-  // Schema.org structured data for geographic targeting
+  // Enhanced Schema.org structured data for AI search engines
   const schemaOrgData = {
     "@context": "https://schema.org",
     "@type": "HealthAndBeautyBusiness",
@@ -62,7 +62,40 @@ const Index = () => {
     "availableLanguage": {
       "@type": "Language",
       "name": "English"
+    },
+    // Enhanced AI-friendly attributes
+    "keywords": "meditation, hypnosis, anxiety, stress relief, sleep, confidence, personal growth, anti-bullying",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "everyone seeking mental wellness",
+      "geographicArea": {
+        "@type": "AdministrativeArea",
+        "name": "Global"
+      }
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "mainContentOfPage": "Free guided meditation and hypnosis recordings for mental wellness and personal development"
     }
+  };
+  
+  // AI-friendly content structure for current category
+  const categoryContentSchema = {
+    "@context": "https://schema.org",
+    "@type": "DigitalDocument",
+    "name": `${categoryNames[activeCategory]} Meditation Recordings`,
+    "about": categoryDescriptions[activeCategory],
+    "keywords": categoryKeywords[activeCategory],
+    "encodingFormat": "audio/mpeg",
+    "accessMode": "auditory",
+    "accessibilityFeature": "audioDescription",
+    "accessibilitySummary": "Audio recordings with guided meditation for self-improvement and mental wellness"
   };
   
   return (
@@ -72,8 +105,18 @@ const Index = () => {
         <meta name="description" content={categoryDescriptions[activeCategory]} />
         <meta name="keywords" content={categoryKeywords[activeCategory]} />
         <link rel="canonical" href={`https://mindharmony.com/`} />
+        {/* AI-friendly metadata */}
+        <meta name="robots" content="max-image-preview:large" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="ai-index" content="allow" />
+        <meta name="ai-crawler" content="index,follow" />
+        <meta name="ai-classification" content="mental health, wellness, meditation, self-help" />
+        <meta name="subject-keywords" content={categoryKeywords[activeCategory]} />
         <script type="application/ld+json">
           {JSON.stringify(schemaOrgData)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(categoryContentSchema)}
         </script>
       </Helmet>
       
