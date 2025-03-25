@@ -74,7 +74,7 @@ export const Sidebar = ({
   return (
     <div
       className={cn(
-        "h-screen bg-sidebar py-3 border-r border-sidebar-border transition-all duration-300 ease-in-out",
+        "h-screen bg-sidebar py-3 border-r border-sidebar-border transition-all duration-300 ease-in-out flex flex-col",
         isCollapsed ? "w-16" : "w-64"
       )}
     >
@@ -196,14 +196,15 @@ export const Sidebar = ({
         </nav>
       </div>
 
-      {!isCollapsed && (
-        <div className="absolute bottom-6 left-0 right-0 px-4">
+      {/* Footer section with copyright */}
+      <div className="mt-auto px-4 pb-4">
+        {!isCollapsed && (
           <div className="text-center text-xs text-calm-500">
             <p>© {new Date().getFullYear()} Inner Calm</p>
             <p className="mt-1">All rights reserved</p>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
