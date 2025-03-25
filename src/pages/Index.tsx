@@ -41,6 +41,30 @@ const Index = () => {
     window.location.href = path;
   };
   
+  // Schema.org structured data for geographic targeting
+  const schemaOrgData = {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "Mind Harmony",
+    "description": "Free hypnosis and meditation recordings for personal development.",
+    "url": "https://mindharmony.com",
+    "areaServed": [
+      {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "37.09024",
+          "longitude": "-95.712891"
+        },
+        "geoRadius": "8000000" // Global reach in meters
+      }
+    ],
+    "availableLanguage": {
+      "@type": "Language",
+      "name": "English"
+    }
+  };
+  
   return (
     <>
       <Helmet>
@@ -48,6 +72,9 @@ const Index = () => {
         <meta name="description" content={categoryDescriptions[activeCategory]} />
         <meta name="keywords" content={categoryKeywords[activeCategory]} />
         <link rel="canonical" href={`https://mindharmony.com/`} />
+        <script type="application/ld+json">
+          {JSON.stringify(schemaOrgData)}
+        </script>
       </Helmet>
       
       <div className="flex h-screen overflow-hidden">
