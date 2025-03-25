@@ -195,16 +195,6 @@ export const Sidebar = ({
           </button>
         </nav>
       </div>
-
-      {/* Footer section with copyright */}
-      <div className="mt-auto px-4 pb-4">
-        {!isCollapsed && (
-          <div className="text-center text-xs text-calm-500">
-            <p>© {new Date().getFullYear()}</p>
-            <p className="mt-1">All rights reserved</p>
-          </div>
-        )}
-      </div>
     </div>
   );
 };
