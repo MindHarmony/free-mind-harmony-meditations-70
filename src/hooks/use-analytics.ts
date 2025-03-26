@@ -29,22 +29,22 @@ export const useAnalytics = () => {
 
   // Initialize Google Analytics on component mount
   useEffect(() => {
-    try {
-      if (GA_MEASUREMENT_ID) {
+    if (GA_MEASUREMENT_ID) {
+      try {
         initializeGA(GA_MEASUREMENT_ID);
         trackPageView();
-      } else {
-        console.warn('Google Analytics Measurement ID is not configured');
+      } catch (error) {
+        console.error('Error initializing Google Analytics:', error);
       }
-    } catch (error) {
-      console.error('Error initializing Google Analytics:', error);
+    } else {
+      console.warn('Google Analytics Measurement ID is not configured');
     }
   }, []);
 
   // Track page view
   const trackPageView = (path?: string) => {
+    const pagePath = path || window.location.pathname;
     try {
-      const pagePath = path || window.location.pathname;
       if (window.gtag) {
         window.gtag('event', 'page_view', {
           page_path: pagePath,
