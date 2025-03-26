@@ -2,96 +2,83 @@
 import { useEffect } from 'react';
 import { Category } from '@/data/recordings';
 
-// Simple analytics interface
-interface AnalyticsEvent {
-  event: string;
-  category?: string;
-  action?: string;
-  label?: string;
-  value?: number;
-  timestamp: number;
-}
+// Initialize Google Analytics - function will be called once GA script is loaded
+const initializeGA = (measurementId: string) => {
+  // Create script element for Google Analytics
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+  document.head.appendChild(script);
 
-// Storage key for analytics events
-const ANALYTICS_STORAGE_KEY = 'mind-harmony-analytics';
-
-// Helper to store events in localStorage
-const storeEvent = (event: AnalyticsEvent) => {
-  try {
-    const existingEvents = localStorage.getItem(ANALYTICS_STORAGE_KEY);
-    const events = existingEvents ? JSON.parse(existingEvents) : [];
-    events.push(event);
-    localStorage.setItem(ANALYTICS_STORAGE_KEY, JSON.stringify(events));
-    console.log('Analytics event tracked:', event);
-  } catch (error) {
-    console.error('Failed to store analytics event:', error);
+  // Initialize dataLayer and gtag function
+  window.dataLayer = window.dataLayer || [];
+  function gtag(...args: any) {
+    window.dataLayer.push(args);
   }
+  gtag('js', new Date());
+  gtag('config', measurementId);
+
+  // Make gtag available globally
+  window.gtag = gtag;
 };
 
 // Analytics hook
 export const useAnalytics = () => {
-  // Track page view on component mount
+  // Google Analytics Measurement ID - replace this with your actual ID when ready
+  const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Replace with your actual GA ID
+
+  // Initialize Google Analytics on component mount
   useEffect(() => {
-    trackPageView();
+    if (GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
+      initializeGA(GA_MEASUREMENT_ID);
+      trackPageView();
+    } else {
+      console.warn('Google Analytics Measurement ID is not configured');
+    }
   }, []);
 
   // Track page view
   const trackPageView = (path?: string) => {
-    const event: AnalyticsEvent = {
-      event: 'pageview',
-      category: 'navigation',
-      action: 'view',
-      label: path || window.location.pathname,
-      timestamp: Date.now()
-    };
-    storeEvent(event);
+    const pagePath = path || window.location.pathname;
+    if (window.gtag) {
+      window.gtag('event', 'page_view', {
+        page_path: pagePath,
+        page_title: document.title
+      });
+    }
   };
 
   // Track recording selection
   const trackRecordingSelection = (categoryId: Category, recordingTitle: string) => {
-    const event: AnalyticsEvent = {
-      event: 'recording_selection',
-      category: 'engagement',
-      action: 'select',
-      label: `${categoryId}:${recordingTitle}`,
-      timestamp: Date.now()
-    };
-    storeEvent(event);
+    if (window.gtag) {
+      window.gtag('event', 'recording_selection', {
+        event_category: 'engagement',
+        event_label: `${categoryId}:${recordingTitle}`
+      });
+    }
   };
 
   // Track category change
   const trackCategoryChange = (categoryId: Category) => {
-    const event: AnalyticsEvent = {
-      event: 'category_change',
-      category: 'navigation',
-      action: 'select',
-      label: categoryId,
-      timestamp: Date.now()
-    };
-    storeEvent(event);
-  };
-
-  // Export analytics data (could be used for admin panel later)
-  const exportAnalytics = (): AnalyticsEvent[] => {
-    try {
-      const data = localStorage.getItem(ANALYTICS_STORAGE_KEY);
-      return data ? JSON.parse(data) : [];
-    } catch (error) {
-      console.error('Failed to export analytics:', error);
-      return [];
+    if (window.gtag) {
+      window.gtag('event', 'category_change', {
+        event_category: 'navigation',
+        event_label: categoryId
+      });
     }
-  };
-
-  // Clear analytics data
-  const clearAnalytics = () => {
-    localStorage.removeItem(ANALYTICS_STORAGE_KEY);
   };
 
   return {
     trackPageView,
     trackRecordingSelection,
-    trackCategoryChange,
-    exportAnalytics,
-    clearAnalytics
+    trackCategoryChange
   };
 };
+
+// Add typings for window object to include dataLayer and gtag
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+  }
+}
