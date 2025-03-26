@@ -29,42 +29,58 @@ export const useAnalytics = () => {
 
   // Initialize Google Analytics on component mount
   useEffect(() => {
-    if (GA_MEASUREMENT_ID) {
-      initializeGA(GA_MEASUREMENT_ID);
-      trackPageView();
-    } else {
-      console.warn('Google Analytics Measurement ID is not configured');
+    try {
+      if (GA_MEASUREMENT_ID) {
+        initializeGA(GA_MEASUREMENT_ID);
+        trackPageView();
+      } else {
+        console.warn('Google Analytics Measurement ID is not configured');
+      }
+    } catch (error) {
+      console.error('Error initializing Google Analytics:', error);
     }
   }, []);
 
   // Track page view
   const trackPageView = (path?: string) => {
-    const pagePath = path || window.location.pathname;
-    if (window.gtag) {
-      window.gtag('event', 'page_view', {
-        page_path: pagePath,
-        page_title: document.title
-      });
+    try {
+      const pagePath = path || window.location.pathname;
+      if (window.gtag) {
+        window.gtag('event', 'page_view', {
+          page_path: pagePath,
+          page_title: document.title
+        });
+      }
+    } catch (error) {
+      console.error('Error tracking page view:', error);
     }
   };
 
   // Track recording selection
   const trackRecordingSelection = (categoryId: Category, recordingTitle: string) => {
-    if (window.gtag) {
-      window.gtag('event', 'recording_selection', {
-        event_category: 'engagement',
-        event_label: `${categoryId}:${recordingTitle}`
-      });
+    try {
+      if (window.gtag) {
+        window.gtag('event', 'recording_selection', {
+          event_category: 'engagement',
+          event_label: `${categoryId}:${recordingTitle}`
+        });
+      }
+    } catch (error) {
+      console.error('Error tracking recording selection:', error);
     }
   };
 
   // Track category change
   const trackCategoryChange = (categoryId: Category) => {
-    if (window.gtag) {
-      window.gtag('event', 'category_change', {
-        event_category: 'navigation',
-        event_label: categoryId
-      });
+    try {
+      if (window.gtag) {
+        window.gtag('event', 'category_change', {
+          event_category: 'navigation',
+          event_label: categoryId
+        });
+      }
+    } catch (error) {
+      console.error('Error tracking category change:', error);
     }
   };
 
