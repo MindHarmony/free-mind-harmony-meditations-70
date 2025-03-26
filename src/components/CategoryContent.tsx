@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { AudioPlayer } from "./AudioPlayer";
 import { Recording, getRecordingsByCategory, Category } from "@/data/recordings";
@@ -5,7 +6,6 @@ import { Clock, AlertCircle, Copy, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { useAnalytics } from "@/hooks/use-analytics";
 
 interface CategoryContentProps {
   category: Category;
@@ -16,7 +16,6 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasCopied, setHasCopied] = useState(false);
   const { toast } = useToast();
-  const analytics = useAnalytics();
 
   const handleCopyCode = () => {
     navigator.clipboard.writeText("CARLA");
@@ -40,18 +39,12 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
     const categoryRecordings = getRecordingsByCategory(category);
     
     const timer = setTimeout(() => {
-      if (categoryRecordings[0]) {
-        setRecording(categoryRecordings[0]);
-        // Track that the user viewed this recording
-        analytics.trackRecordingSelection(category, categoryRecordings[0].title);
-      } else {
-        setRecording(null);
-      }
+      setRecording(categoryRecordings[0] || null);
       setIsLoading(false);
     }, 300);
     
     return () => clearTimeout(timer);
-  }, [category, analytics]);
+  }, [category]);
 
   if (isLoading) {
     return (
