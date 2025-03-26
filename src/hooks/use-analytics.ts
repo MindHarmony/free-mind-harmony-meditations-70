@@ -24,12 +24,12 @@ const initializeGA = (measurementId: string) => {
 
 // Analytics hook
 export const useAnalytics = () => {
-  // Google Analytics Measurement ID - replace this with your actual ID when ready
-  const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Replace with your actual GA ID
+  // Google Analytics Measurement ID
+  const GA_MEASUREMENT_ID = 'G-QZLYDT5Q8K';
 
   // Initialize Google Analytics on component mount
   useEffect(() => {
-    if (GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
+    if (GA_MEASUREMENT_ID) {
       initializeGA(GA_MEASUREMENT_ID);
       trackPageView();
     } else {
