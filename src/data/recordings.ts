@@ -123,15 +123,17 @@ export const recordings: Recording[] = [
     keywords: ["10-minute guided meditation for falling asleep fast", "quick sleep meditation", "bedtime relaxation"]
   },
 
-  // Update the anti-bullying recordings with new audio sources
+  // Update the anti-bullying recordings with the new SoundCloud embed
   {
     id: "10",
     title: "Building Resilience",
     description: "Guided meditation for teens dealing with bullying. Develop psychological resilience to stand strong against bullying and peer pressure with this supportive hypnosis session.",
     duration: "21:35",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-blurry-future-120.mp3", // Updated to a more reliable source
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-blurry-future-120.mp3", // Fallback audio
     category: "anti-bullying",
     featured: true,
+    embedType: "soundcloud",
+    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2064262203&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
     keywords: ["guided meditation for teens dealing with bullying", "hypnosis for building resilience after bullying", "teen resilience"]
   },
   {
