@@ -1,9 +1,9 @@
-
 import { useState, useEffect, useRef } from "react";
-import { Play, Pause, Volume2, Volume1, VolumeX } from "lucide-react";
+import { Play, Pause, Volume2, Volume1, VolumeX, AlertTriangle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Recording } from "@/data/recordings";
 import { toast } from "sonner";
+import { Link } from "react-router-dom";
 
 interface AudioPlayerProps {
   recording: Recording;
@@ -301,6 +301,15 @@ export const AudioPlayer = ({ recording, isCompact = false }: AudioPlayerProps) 
             />
           )}
         </div>
+      </div>
+
+      {/* Add disclaimer notice below the player */}
+      <div className="mt-3 pt-3 border-t border-calm-100 flex items-start gap-2">
+        <AlertTriangle className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
+        <p className="text-xs text-calm-600">
+          Please do not listen while driving or operating machinery. Only use in a safe, relaxed environment. 
+          See full <Link to="/terms" className="text-trust-500 hover:underline">disclaimer here</Link>.
+        </p>
       </div>
     </div>
   );
