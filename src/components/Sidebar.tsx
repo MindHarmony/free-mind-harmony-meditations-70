@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { HeartPulse, Star, Moon, Shield, User, Menu, FileText, Info, Brain, Cookie } from "lucide-react";
+import { HeartPulse, Star, Moon, Shield, User, Menu, FileText, Info, Brain, Cookie, AlertTriangle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Category, categoryNames } from "@/data/recordings";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -176,6 +176,21 @@ export const Sidebar = ({
               )}
             >
               Privacy Policy
+            </span>
+          </button>
+          <button
+            onClick={() => handleNavigate("/terms")}
+            className="w-full flex items-center px-2 py-2 rounded-lg transition-all duration-200 text-calm-600 hover:bg-trust-50 hover:text-trust-700"
+            aria-label="Terms & Disclaimer"
+          >
+            <span className="flex-shrink-0"><AlertTriangle className="w-5 h-5" /></span>
+            <span 
+              className={cn(
+                "ml-3 transition-opacity duration-300",
+                isCollapsed ? "opacity-0 w-0 overflow-hidden" : "opacity-100"
+              )}
+            >
+              Terms & Disclaimer
             </span>
           </button>
           <button
