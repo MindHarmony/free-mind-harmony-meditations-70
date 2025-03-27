@@ -197,15 +197,17 @@ export const recordings: Recording[] = [
     keywords: ["nervous system regulation", "meditation for regulation", "surviving to thriving", "purpose and fulfillment"]
   },
   
-  // Adding new recordings for the Manifest Your Dreams category
+  // Updating the Manifest Your Dreams recordings to include the new SoundCloud embed
   {
     id: "17",
-    title: "Dream Manifestation Journey",
+    title: "Manifest Your Dreams",
     description: "Harness the power of your subconscious mind to manifest your deepest desires and dreams. This guided meditation helps you clarify your vision and connect with the emotional frequency of your desired reality.",
     duration: "25:30",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3", // Fallback audio
     category: "manifest-dreams",
     featured: true,
+    embedType: "soundcloud",
+    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2064258228&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
     keywords: ["dream manifestation", "manifest desires", "law of attraction", "visualization for manifestation"]
   },
   {
