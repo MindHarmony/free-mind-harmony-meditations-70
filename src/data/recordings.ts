@@ -210,11 +210,9 @@ export const recordings: Recording[] = [
     title: "Building Resilience",
     description: "This guided hypnosis helps teenagers develop resilience against bullying, building inner strength and confidence to overcome negative social experiences.",
     duration: "22:45",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3", // Fallback audio
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3",
     category: "teenage-anti-bullying",
     featured: true,
-    embedType: "soundcloud",
-    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1724078031&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
     keywords: ["anti-bullying hypnosis for teenagers", "building resilience against bullying", "teen confidence meditation", "overcoming negative social experiences"]
   },
   {
