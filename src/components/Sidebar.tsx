@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from "react";
-import { HeartPulse, Star, Moon, Shield, User, Menu, FileText, Info, Brain, Cookie, AlertTriangle } from "lucide-react";
+import { HeartPulse, Star, Moon, User, Menu, FileText, Info, Brain, Cookie, AlertTriangle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Category, categoryNames } from "@/data/recordings";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -43,11 +42,6 @@ export const Sidebar = ({
       id: "sleep",
       name: categoryNames["sleep"], 
       icon: <Moon className="w-5 h-5" />
-    },
-    {
-      id: "anti-bullying",
-      name: categoryNames["anti-bullying"],
-      icon: <Shield className="w-5 h-5" />
     },
     {
       id: "personal-growth",

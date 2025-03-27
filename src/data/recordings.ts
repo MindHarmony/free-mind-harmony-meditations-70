@@ -1,3 +1,4 @@
+
 export type Recording = {
   id: string;
   title: string;
@@ -15,23 +16,23 @@ export type Category =
   | "stress-anxiety"
   | "confidence"
   | "sleep"
-  | "anti-bullying"
   | "personal-growth"
   | "inner-calm"
-  | "manifest-dreams"; // Added new category
+  | "manifest-dreams"; // Removed "anti-bullying" category
 
 export const categoryNames: Record<Category, string> = {
   "stress-anxiety": "Anxiety",
   "confidence": "Confidence",
   "sleep": "Sleep & Insomnia",
-  "anti-bullying": "Teenage Anti-Bullying",
   "personal-growth": "Future Self Visualization",
   "inner-calm": "Inner Calm",
-  "manifest-dreams": "Manifest Your Dreams" // Added new category name
+  "manifest-dreams": "Manifest Your Dreams"
+  // Removed "anti-bullying" category name
 };
 
 // Sample recordings data
 export const recordings: Recording[] = [
+  // First set of recordings for stress-anxiety
   {
     id: "1",
     title: "Peace In The Now",
@@ -62,6 +63,8 @@ export const recordings: Recording[] = [
     category: "stress-anxiety",
     keywords: ["short meditation for anxiety and overthinking", "how to use meditation for panic attacks", "quick anxiety relief"]
   },
+  
+  // Confidence category recordings
   {
     id: "4",
     title: "Personal Confidence Booster",
@@ -93,7 +96,7 @@ export const recordings: Recording[] = [
     keywords: ["free hypnosis to boost confidence and motivation", "hypnosis to overcome self-doubt and fear", "inner strength meditation"]
   },
 
-  // Update the sleep recordings with new title for the first one
+  // Sleep category recordings
   {
     id: "7",
     title: "Deep Sleep Meditation",
@@ -123,37 +126,7 @@ export const recordings: Recording[] = [
     keywords: ["10-minute guided meditation for falling asleep fast", "quick sleep meditation", "bedtime relaxation"]
   },
 
-  // Update the anti-bullying recordings with the new SoundCloud embed
-  {
-    id: "10",
-    title: "Building Resilience",
-    description: "Guided meditation for teens dealing with bullying. Develop psychological resilience to stand strong against bullying and peer pressure with this supportive hypnosis session.",
-    duration: "21:35",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-blurry-future-120.mp3", // Fallback audio
-    category: "anti-bullying",
-    featured: true,
-    embedType: "soundcloud",
-    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2064262203&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
-    keywords: ["guided meditation for teens dealing with bullying", "hypnosis for building resilience after bullying", "teen resilience"]
-  },
-  {
-    id: "11",
-    title: "Teen Confidence Builder",
-    description: "Self-love meditation for teenagers with low confidence. Build a strong sense of self-worth and confidence to overcome social challenges and bullying situations.",
-    duration: "18:50",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-forest-treasure-138.mp3", // Updated to a more reliable source
-    category: "anti-bullying",
-    keywords: ["self-love meditation for teenagers with low confidence", "teen confidence meditation", "overcoming bullying"]
-  },
-  {
-    id: "12",
-    title: "Emotional Shield",
-    description: "Meditation to let go of negative thoughts from bullying. Create an emotional shield to protect yourself from negative influences and remarks, helping you stay strong after being bullied.",
-    duration: "20:25",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-deep-urban-623.mp3",
-    category: "anti-bullying",
-    keywords: ["meditation to let go of negative thoughts from bullying", "how to stay strong after being bullied – meditation", "emotional protection"]
-  },
+  // Personal growth category recordings
   {
     id: "13",
     title: "Future Self Visualization",
@@ -185,21 +158,21 @@ export const recordings: Recording[] = [
     keywords: ["law of attraction meditation for abundance and confidence", "visualization exercise to attract positivity and wealth", "abundance meditation"]
   },
   
-  // Changing the nervous system recording to inner-calm category
+  // Inner calm category recordings
   {
     id: "16",
     title: "Inner Calm Meditation",
     description: "In order to go from surviving to thriving we need to regulate our nervous system. Only then can we unlock the key to our full potential and leading lives of purpose and fulfilment.",
-    duration: "20:15", // Approximate duration - adjust if known
+    duration: "20:15",
     audioSrc: "https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3", // Fallback audio
     embedType: "soundcloud",
     embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2060244268&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
-    category: "inner-calm", // Changed from "nervous-system" to "inner-calm"
+    category: "inner-calm",
     featured: true,
     keywords: ["nervous system regulation", "meditation for regulation", "surviving to thriving", "purpose and fulfillment"]
   },
   
-  // Updating the Manifest Your Dreams recordings to include the new SoundCloud embed
+  // Manifest dreams category recordings
   {
     id: "17",
     title: "Manifest Your Dreams",
@@ -243,3 +216,4 @@ export const getRecordingsByCategory = (category: Category): Recording[] => {
 export const getAllCategories = (): Category[] => {
   return Object.keys(categoryNames) as Category[];
 };
+
