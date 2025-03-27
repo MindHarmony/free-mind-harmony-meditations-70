@@ -17,7 +17,8 @@ export type Category =
   | "sleep"
   | "anti-bullying"
   | "personal-growth"
-  | "inner-calm"; // Changed from "nervous-system" to "inner-calm"
+  | "inner-calm"
+  | "manifest-dreams"; // Added new category
 
 export const categoryNames: Record<Category, string> = {
   "stress-anxiety": "Anxiety",
@@ -25,7 +26,8 @@ export const categoryNames: Record<Category, string> = {
   "sleep": "Sleep & Insomnia",
   "anti-bullying": "Teenage Anti-Bullying",
   "personal-growth": "Future Self Visualization",
-  "inner-calm": "Inner Calm" // Changed from "Nervous System Regulation" to "Inner Calm"
+  "inner-calm": "Inner Calm",
+  "manifest-dreams": "Manifest Your Dreams" // Added new category name
 };
 
 // Sample recordings data
@@ -193,6 +195,36 @@ export const recordings: Recording[] = [
     category: "inner-calm", // Changed from "nervous-system" to "inner-calm"
     featured: true,
     keywords: ["nervous system regulation", "meditation for regulation", "surviving to thriving", "purpose and fulfillment"]
+  },
+  
+  // Adding new recordings for the Manifest Your Dreams category
+  {
+    id: "17",
+    title: "Dream Manifestation Journey",
+    description: "Harness the power of your subconscious mind to manifest your deepest desires and dreams. This guided meditation helps you clarify your vision and connect with the emotional frequency of your desired reality.",
+    duration: "25:30",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3",
+    category: "manifest-dreams",
+    featured: true,
+    keywords: ["dream manifestation", "manifest desires", "law of attraction", "visualization for manifestation"]
+  },
+  {
+    id: "18",
+    title: "Abundance Activation",
+    description: "Open yourself to receiving abundance in all forms. This meditation removes limiting beliefs about wealth and prosperity, allowing you to align with the frequency of abundance.",
+    duration: "22:15",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-driving-ambition-32.mp3",
+    category: "manifest-dreams",
+    keywords: ["abundance meditation", "prosperity hypnosis", "wealth attraction", "financial freedom"]
+  },
+  {
+    id: "19",
+    title: "Quantum Reality Creation",
+    description: "Tap into quantum field principles to reshape your reality. This advanced manifestation technique uses specific visualization methods that help you collapse possibility waves into your desired experiences.",
+    duration: "27:40",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-forest-treasure-138.mp3",
+    category: "manifest-dreams",
+    keywords: ["quantum manifestation", "reality creation meditation", "conscious creation", "manifestation techniques"]
   }
 ];
 
