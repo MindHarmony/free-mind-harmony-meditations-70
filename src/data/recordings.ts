@@ -1,4 +1,3 @@
-
 export type Recording = {
   id: string;
   title: string;
@@ -18,7 +17,8 @@ export type Category =
   | "sleep"
   | "personal-growth"
   | "inner-calm"
-  | "manifest-dreams"; // Removed "anti-bullying" category
+  | "manifest-dreams"
+  | "teenage-anti-bullying"; // Added "teenage-anti-bullying" category
 
 export const categoryNames: Record<Category, string> = {
   "stress-anxiety": "Anxiety",
@@ -26,8 +26,8 @@ export const categoryNames: Record<Category, string> = {
   "sleep": "Sleep & Insomnia",
   "personal-growth": "Future Self Visualization",
   "inner-calm": "Inner Calm",
-  "manifest-dreams": "Manifest Your Dreams"
-  // Removed "anti-bullying" category name
+  "manifest-dreams": "Manifest Your Dreams",
+  "teenage-anti-bullying": "Teenage Anti-Bullying" // Added category name
 };
 
 // Sample recordings data
@@ -202,8 +202,62 @@ export const recordings: Recording[] = [
     audioSrc: "https://assets.mixkit.co/music/preview/mixkit-forest-treasure-138.mp3",
     category: "manifest-dreams",
     keywords: ["quantum manifestation", "reality creation meditation", "conscious creation", "manifestation techniques"]
+  },
+  
+  // Teenage Anti-Bullying category recordings
+  {
+    id: "20",
+    title: "Building Resilience",
+    description: "This guided hypnosis helps teenagers develop resilience against bullying, building inner strength and confidence to overcome negative social experiences.",
+    duration: "22:45",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3", // Fallback audio
+    category: "teenage-anti-bullying",
+    featured: true,
+    embedType: "soundcloud",
+    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1724078031&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
+    keywords: ["anti-bullying hypnosis for teenagers", "building resilience against bullying", "teen confidence meditation", "overcoming negative social experiences"]
+  },
+  {
+    id: "21",
+    title: "Emotional Healing",
+    description: "A gentle hypnotic session designed to help teenagers process and heal from emotional pain caused by bullying experiences, fostering self-love and acceptance.",
+    duration: "19:30",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3",
+    category: "teenage-anti-bullying",
+    keywords: ["emotional healing from bullying", "hypnosis for teenage anxiety", "self-love meditation for teens", "healing hypnosis for bullying victims"]
+  },
+  {
+    id: "22",
+    title: "Confidence in Social Settings",
+    description: "This guided meditation helps teenagers develop natural confidence in social situations, making it easier to navigate peer relationships and stand up for themselves.",
+    duration: "18:15",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-driving-ambition-32.mp3",
+    category: "teenage-anti-bullying",
+    keywords: ["teen social confidence meditation", "guided hypnosis for peer pressure", "standing up to bullies meditation", "teenage social anxiety relief"]
   }
 ];
+
+// Update categoryKeywords in Index.tsx
+export const categoryKeywords: Record<Category, string> = {
+  "stress-anxiety": "free guided meditation for anxiety and stress relief, calming hypnosis for social anxiety, short meditation for anxiety and overthinking, how to use meditation for panic attacks, best meditation for anxiety before sleep",
+  "confidence": "guided meditation for self-confidence and inner strength, hypnosis to overcome self-doubt and fear, confidence meditation for speaking in public, daily self-esteem meditation for a positive mindset, free hypnosis to boost confidence and motivation",
+  "sleep": "free sleep hypnosis for deep relaxation, 10-minute guided meditation for falling asleep fast, insomnia relief meditation for a restful night, hypnosis for calming the mind before bed, best sleep meditation for anxiety and stress",
+  "personal-growth": "guided visualization meditation to manifest success, hypnosis for manifesting your dream life, law of attraction meditation for abundance and confidence, visualization exercise to attract positivity and wealth, future self meditation for personal growth and clarity",
+  "inner-calm": "inner calm meditation, nervous system regulation, guided meditation for inner peace, techniques for emotional balance, meditation for purpose and fulfillment",
+  "manifest-dreams": "dream manifestation meditation, abundance attraction hypnosis, manifest your desires, law of attraction techniques, visualization for manifestation, quantum reality creation",
+  "teenage-anti-bullying": "anti-bullying hypnosis for teenagers, building resilience against bullying, teen confidence meditation, emotional healing from bullying, teen social confidence meditation, overcoming negative social experiences, hypnosis for teenage anxiety"
+};
+
+// Update categoryDescriptions in Index.tsx
+export const categoryDescriptions: Record<Category, string> = {
+  "stress-anxiety": "Free guided meditations and hypnosis recordings for anxiety relief, stress reduction, and managing overthinking or panic attacks.",
+  "confidence": "Boost your self-confidence and overcome self-doubt with our free guided hypnosis sessions for personal empowerment and public speaking confidence.",
+  "sleep": "Fall asleep faster and enjoy deeper rest with our free sleep hypnosis recordings designed to calm your mind before bed and relieve insomnia.",
+  "personal-growth": "Manifest your dreams and visualize your ideal future self with our guided meditation recordings for personal growth, abundance, and positive change.",
+  "inner-calm": "Find inner calm and peace with our guided meditations designed to help you transition from surviving to thriving and unlock your full potential.",
+  "manifest-dreams": "Powerful meditations to help you manifest your deepest desires, attract abundance, and create your dream reality using proven visualization techniques.",
+  "teenage-anti-bullying": "Supportive hypnosis sessions designed specifically for teenagers dealing with bullying, helping build resilience, confidence, and emotional healing."
+};
 
 export const getFeaturedRecordings = (): Recording[] => {
   return recordings.filter(recording => recording.featured);
@@ -216,4 +270,3 @@ export const getRecordingsByCategory = (category: Category): Recording[] => {
 export const getAllCategories = (): Category[] => {
   return Object.keys(categoryNames) as Category[];
 };
-
