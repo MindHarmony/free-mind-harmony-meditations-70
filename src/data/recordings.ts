@@ -214,7 +214,7 @@ export const recordings: Recording[] = [
     category: "teenage-bullying",
     featured: true,
     embedType: "soundcloud",
-    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1809093726&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
+    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1809093726%3Fsecret_token%3Ds-fd75137c086f4e75b67877aa2c47b59f&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
     keywords: ["teenage bullying help", "meditation for bullied teens", "anti-bullying hypnosis", "building teen resilience", "coping with school bullying"]
   }
 ];
