@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -80,7 +81,7 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Mind Harmony - {categoryNames[activeCategory]} Hypnosis & Meditation</title>
+        <title>Mind Harmony - Free Hypnosis & Meditation | {categoryNames[activeCategory]}</title>
         <meta name="description" content={categoryDescriptions[activeCategory]} />
         <meta name="keywords" content={categoryKeywords[activeCategory]} />
         <link rel="canonical" href={`https://mindharmony.com/`} />
