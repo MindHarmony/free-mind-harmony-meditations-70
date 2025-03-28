@@ -1,3 +1,4 @@
+
 export type Recording = {
   id: string;
   title: string;
@@ -213,6 +214,8 @@ export const recordings: Recording[] = [
     audioSrc: "https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3",
     category: "teenage-anti-bullying",
     featured: true,
+    embedType: "soundcloud",
+    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1754580626&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
     keywords: ["anti-bullying hypnosis for teenagers", "building resilience against bullying", "teen confidence meditation", "overcoming negative social experiences"]
   },
   {
