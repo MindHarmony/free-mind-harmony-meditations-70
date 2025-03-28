@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -28,6 +29,19 @@ const Index = () => {
   const handleNavigate = (path: string) => {
     window.location.href = path;
   };
+  
+  // Additional AI-friendly meta tags for Manifest and Teen Anti-Bullying
+  const additionalMetaTags = activeCategory === "manifest-dreams" ? {
+    "og:title": "Free Manifest Your Dreams Guided Meditation | Mind Harmony",
+    "og:description": "Access our powerful free manifestation meditation to help you manifest your desires and create your dream reality.",
+    "twitter:title": "Manifest Your Dreams | Free Guided Meditation",
+    "twitter:description": "Free guided meditation for manifestation and abundance using the law of attraction",
+  } : activeCategory === "teenage-anti-bullying" ? {
+    "og:title": "Teen Anti-Bullying Guided Meditation | Mind Harmony",
+    "og:description": "Free supportive guided meditation for teenagers facing bullying, designed to build resilience and confidence.",
+    "twitter:title": "Teen Anti-Bullying | Free Guided Meditation",
+    "twitter:description": "Support for teenagers experiencing bullying with our free guided meditation for resilience",
+  } : {};
   
   // Enhanced Schema.org structured data for AI search engines
   const schemaOrgData = {
@@ -100,6 +114,13 @@ const Index = () => {
         <meta name="ai-crawler" content="index,follow" />
         <meta name="ai-classification" content="mental health, wellness, meditation, self-help" />
         <meta name="subject-keywords" content={categoryKeywords[activeCategory]} />
+        
+        {/* Enhanced OpenGraph and Twitter meta tags for specific categories */}
+        {Object.entries(additionalMetaTags).map(([name, content]) => (
+          <meta key={name} property={name} content={content} />
+        ))}
+        
+        {/* Schema.org structured data */}
         <script type="application/ld+json">
           {JSON.stringify(schemaOrgData)}
         </script>
