@@ -1,3 +1,4 @@
+
 export type Recording = {
   id: string;
   title: string;
@@ -17,8 +18,7 @@ export type Category =
   | "sleep"
   | "personal-growth"
   | "inner-calm"
-  | "manifest-dreams"
-  | "anti-bullying"; // Added new category
+  | "manifest-dreams";
 
 export const categoryNames: Record<Category, string> = {
   "stress-anxiety": "Anxiety",
@@ -26,8 +26,7 @@ export const categoryNames: Record<Category, string> = {
   "sleep": "Sleep & Insomnia",
   "personal-growth": "Future Self Visualization",
   "inner-calm": "Inner Calm",
-  "manifest-dreams": "Manifest Your Dreams",
-  "anti-bullying": "Anti-Bullying & Resilience" // Added new category name
+  "manifest-dreams": "Manifest Your Dreams"
 };
 
 // Sample recordings data
@@ -202,38 +201,6 @@ export const recordings: Recording[] = [
     audioSrc: "https://assets.mixkit.co/music/preview/mixkit-forest-treasure-138.mp3",
     category: "manifest-dreams",
     keywords: ["quantum manifestation", "reality creation meditation", "conscious creation", "manifestation techniques"]
-  },
-  
-  // Anti-bullying category recordings
-  {
-    id: "20",
-    title: "Building Emotional Resilience",
-    description: "Develop strength against bullying with this guided meditation focusing on building emotional resilience, self-confidence, and a shield of positive energy to protect against negative influences.",
-    duration: "23:45",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3", // Fallback audio
-    category: "anti-bullying",
-    featured: true,
-    embedType: "soundcloud",
-    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2064258228&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
-    keywords: ["anti-bullying meditation", "resilience building", "emotional strength", "dealing with bullies", "self-protection meditation"]
-  },
-  {
-    id: "21",
-    title: "Healing Past Wounds",
-    description: "A healing meditation for those who have experienced bullying. This gentle hypnosis helps process emotional pain, rebuild self-esteem, and release the negative impact of past experiences.",
-    duration: "27:15",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3",
-    category: "anti-bullying",
-    keywords: ["healing from bullying", "trauma recovery meditation", "self-esteem rebuilding", "emotional healing", "release past wounds"]
-  },
-  {
-    id: "22",
-    title: "Standing Strong",
-    description: "Empower yourself with this confidence-building meditation specifically designed for standing up to bullying. Learn techniques for maintaining calm, asserting boundaries, and radiating inner strength.",
-    duration: "19:30",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-forest-treasure-138.mp3",
-    category: "anti-bullying",
-    keywords: ["standing up to bullies", "assertiveness meditation", "boundary setting", "confidence against bullying", "inner strength meditation"]
   }
 ];
 
@@ -244,8 +211,7 @@ export const categoryKeywords: Record<Category, string> = {
   "sleep": "free sleep hypnosis for deep relaxation, 10-minute guided meditation for falling asleep fast, insomnia relief meditation for a restful night, hypnosis for calming the mind before bed, best sleep meditation for anxiety and stress",
   "personal-growth": "guided visualization meditation to manifest success, hypnosis for manifesting your dream life, law of attraction meditation for abundance and confidence, visualization exercise to attract positivity and wealth, future self meditation for personal growth and clarity",
   "inner-calm": "inner calm meditation, nervous system regulation, guided meditation for inner peace, techniques for emotional balance, meditation for purpose and fulfillment",
-  "manifest-dreams": "dream manifestation meditation, abundance attraction hypnosis, manifest your desires, law of attraction techniques, visualization for manifestation, quantum reality creation",
-  "anti-bullying": "anti-bullying meditation, resilience building, emotional strength training, healing from bullying, standing up to bullies, assertiveness meditation, building boundaries, confidence against bullying, inner strength meditation, self-protection visualization"
+  "manifest-dreams": "dream manifestation meditation, abundance attraction hypnosis, manifest your desires, law of attraction techniques, visualization for manifestation, quantum reality creation"
 };
 
 // Update categoryDescriptions in Index.tsx
@@ -255,8 +221,7 @@ export const categoryDescriptions: Record<Category, string> = {
   "sleep": "Fall asleep faster and enjoy deeper rest with our free sleep hypnosis recordings designed to calm your mind before bed and relieve insomnia.",
   "personal-growth": "Manifest your dreams and visualize your ideal future self with our guided meditation recordings for personal growth, abundance, and positive change.",
   "inner-calm": "Find inner calm and peace with our guided meditations designed to help you transition from surviving to thriving and unlock your full potential.",
-  "manifest-dreams": "Powerful meditations to help you manifest your deepest desires, attract abundance, and create your dream reality using proven visualization techniques.",
-  "anti-bullying": "Free guided meditations and hypnosis recordings to build resilience against bullying, heal emotional wounds, and develop inner strength to stand confidently in challenging social situations."
+  "manifest-dreams": "Powerful meditations to help you manifest your deepest desires, attract abundance, and create your dream reality using proven visualization techniques."
 };
 
 export const getFeaturedRecordings = (): Recording[] => {
