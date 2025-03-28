@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { HeartPulse, Star, Moon, User, Menu, FileText, Info, Brain, Cookie, AlertTriangle, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -57,6 +58,11 @@ export const Sidebar = ({
       id: "manifest-dreams",
       name: categoryNames["manifest-dreams"],
       icon: <Star className="w-5 h-5" />
+    },
+    {
+      id: "teenage-anti-bullying",
+      name: categoryNames["teenage-anti-bullying"],
+      icon: <Shield className="w-5 h-5" />
     }
   ];
 

@@ -1,4 +1,3 @@
-
 export type Recording = {
   id: string;
   title: string;
@@ -18,7 +17,8 @@ export type Category =
   | "sleep"
   | "personal-growth"
   | "inner-calm"
-  | "manifest-dreams";
+  | "manifest-dreams"
+  | "teenage-anti-bullying";
 
 export const categoryNames: Record<Category, string> = {
   "stress-anxiety": "Anxiety",
@@ -26,7 +26,8 @@ export const categoryNames: Record<Category, string> = {
   "sleep": "Sleep & Insomnia",
   "personal-growth": "Future Self Visualization",
   "inner-calm": "Inner Calm",
-  "manifest-dreams": "Manifest Your Dreams"
+  "manifest-dreams": "Manifest Your Dreams",
+  "teenage-anti-bullying": "Teenage Anti-Bullying"
 };
 
 // Sample recordings data
@@ -201,6 +202,38 @@ export const recordings: Recording[] = [
     audioSrc: "https://assets.mixkit.co/music/preview/mixkit-forest-treasure-138.mp3",
     category: "manifest-dreams",
     keywords: ["quantum manifestation", "reality creation meditation", "conscious creation", "manifestation techniques"]
+  },
+  
+  // Teenage Anti-Bullying category recordings
+  {
+    id: "20",
+    title: "Building Teen Resilience",
+    description: "This guided meditation helps teenagers build resilience against bullying. Learn powerful mental techniques to stay calm, confident, and emotionally strong when facing difficult social situations.",
+    duration: "23:40",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3", // Fallback audio
+    category: "teenage-anti-bullying",
+    featured: true,
+    embedType: "soundcloud",
+    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2051337652%3Fsecret_token%3Ds-UimZw0AL1H1&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
+    keywords: ["teen resilience meditation", "anti-bullying for teenagers", "confidence building for teens", "teenage mental strength"]
+  },
+  {
+    id: "21",
+    title: "Social Confidence for Teens",
+    description: "Boost your social confidence and overcome peer pressure with this guided meditation designed specifically for teenagers. Learn how to stay true to yourself while navigating complex social environments.",
+    duration: "19:15",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3",
+    category: "teenage-anti-bullying",
+    keywords: ["teen social confidence", "peer pressure resistance", "teenage self-esteem", "authentic self meditation"]
+  },
+  {
+    id: "22",
+    title: "Teen Emotional Healing",
+    description: "A gentle guided meditation to help teenagers process and heal from emotional wounds caused by bullying or social exclusion. This session creates a safe space for emotional release and rebuilding self-worth.",
+    duration: "24:30",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-deep-urban-623.mp3",
+    category: "teenage-anti-bullying",
+    keywords: ["emotional healing for teens", "teenage trauma release", "bullying recovery meditation", "teen self-worth"]
   }
 ];
 
@@ -211,7 +244,8 @@ export const categoryKeywords: Record<Category, string> = {
   "sleep": "free sleep hypnosis for deep relaxation, 10-minute guided meditation for falling asleep fast, insomnia relief meditation for a restful night, hypnosis for calming the mind before bed, best sleep meditation for anxiety and stress",
   "personal-growth": "guided visualization meditation to manifest success, hypnosis for manifesting your dream life, law of attraction meditation for abundance and confidence, visualization exercise to attract positivity and wealth, future self meditation for personal growth and clarity",
   "inner-calm": "inner calm meditation, nervous system regulation, guided meditation for inner peace, techniques for emotional balance, meditation for purpose and fulfillment",
-  "manifest-dreams": "dream manifestation meditation, abundance attraction hypnosis, manifest your desires, law of attraction techniques, visualization for manifestation, quantum reality creation"
+  "manifest-dreams": "dream manifestation meditation, abundance attraction hypnosis, manifest your desires, law of attraction techniques, visualization for manifestation, quantum reality creation",
+  "teenage-anti-bullying": "teen resilience meditation, anti-bullying for teenagers, confidence building for teens, teenage mental strength, teen social confidence, peer pressure resistance, teenage self-esteem, emotional healing for teens, bullying recovery meditation"
 };
 
 // Update categoryDescriptions in Index.tsx
@@ -221,7 +255,8 @@ export const categoryDescriptions: Record<Category, string> = {
   "sleep": "Fall asleep faster and enjoy deeper rest with our free sleep hypnosis recordings designed to calm your mind before bed and relieve insomnia.",
   "personal-growth": "Manifest your dreams and visualize your ideal future self with our guided meditation recordings for personal growth, abundance, and positive change.",
   "inner-calm": "Find inner calm and peace with our guided meditations designed to help you transition from surviving to thriving and unlock your full potential.",
-  "manifest-dreams": "Powerful meditations to help you manifest your deepest desires, attract abundance, and create your dream reality using proven visualization techniques."
+  "manifest-dreams": "Powerful meditations to help you manifest your deepest desires, attract abundance, and create your dream reality using proven visualization techniques.",
+  "teenage-anti-bullying": "Supportive guided meditations designed specifically for teenagers to build resilience, boost confidence, and process emotions in the face of bullying or social challenges."
 };
 
 export const getFeaturedRecordings = (): Recording[] => {
