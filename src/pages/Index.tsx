@@ -1,16 +1,24 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Sidebar from "@/components/Sidebar";
 import { CategoryContent } from "@/components/CategoryContent";
-import { Category, categoryNames, categoryKeywords, categoryDescriptions } from "@/data/recordings";
+import { Category, categoryNames, categoryKeywords, categoryDescriptions, getAllCategories } from "@/data/recordings";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbPage } from "@/components/ui/breadcrumb";
 
 const Index = () => {
+  // Initialize with "stress-anxiety" or the first available category
   const [activeCategory, setActiveCategory] = useState<Category>("stress-anxiety");
   const isMobile = useIsMobile();
+  
+  // Ensure the active category exists, otherwise default to "stress-anxiety"
+  useEffect(() => {
+    const allCategories = getAllCategories();
+    if (!allCategories.includes(activeCategory)) {
+      setActiveCategory("stress-anxiety");
+    }
+  }, [activeCategory]);
   
   const handleCategoryChange = (category: Category) => {
     setActiveCategory(category);
