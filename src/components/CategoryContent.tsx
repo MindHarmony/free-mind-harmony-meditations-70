@@ -1,7 +1,8 @@
+
 import { useState, useEffect } from "react";
 import { AudioPlayer } from "./AudioPlayer";
 import { Recording, getRecordingsByCategory, Category } from "@/data/recordings";
-import { Clock, AlertCircle, Copy, Check } from "lucide-react";
+import { Clock, AlertCircle, Copy, Check, Info } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
@@ -71,6 +72,23 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
               </div>
               <p className="text-calm-600 mt-2 text-left" itemProp="description">{recording.description}</p>
               
+              {/* Netflix Adolescence Series Reference for Anti-Bullying Category */}
+              {category === "teenage-anti-bullying" && (
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
+                  <div className="flex items-start">
+                    <Info className="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-medium text-blue-800 text-left">Relevant to Netflix's "Adolescence" Series</h3>
+                      <p className="text-blue-700 text-sm mt-1">
+                        This meditation explores similar themes to Netflix's "Adolescence" series, helping teens navigate the 
+                        complex social and emotional challenges portrayed in the show. Perfect for young people seeking 
+                        support with issues highlighted in the series.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
               {/* Keywords for SEO - hidden visually but available for search engines */}
               {recording.keywords && (
                 <div className="sr-only">
@@ -79,6 +97,13 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
                     {recording.keywords.map((keyword, index) => (
                       <li key={index}>{keyword}</li>
                     ))}
+                    {category === "teenage-anti-bullying" && (
+                      <>
+                        <li>Netflix Adolescence series</li>
+                        <li>teen mental health in media</li>
+                        <li>adolescent struggles portrayed in Netflix</li>
+                      </>
+                    )}
                   </ul>
                 </div>
               )}
@@ -108,11 +133,11 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
                 "@context": "https://schema.org",
                 "@type": "AudioObject",
                 "name": recording.title,
-                "description": recording.description,
+                "description": recording.description + (category === "teenage-anti-bullying" ? " Relevant to themes explored in Netflix's 'Adolescence' series." : ""),
                 "duration": recording.duration,
                 "contentUrl": recording.audioSrc,
                 "encodingFormat": "audio/mpeg",
-                "keywords": recording.keywords?.join(", "),
+                "keywords": recording.keywords?.join(", ") + (category === "teenage-anti-bullying" ? ", Netflix Adolescence series, teen mental health" : ""),
                 "potentialAction": {
                   "@type": "ListenAction",
                   "target": {

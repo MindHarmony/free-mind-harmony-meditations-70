@@ -245,7 +245,7 @@ export const categoryKeywords: Record<Category, string> = {
   "personal-growth": "guided visualization meditation to manifest success, hypnosis for manifesting your dream life, law of attraction meditation for abundance and confidence, visualization exercise to attract positivity and wealth, future self meditation for personal growth and clarity",
   "inner-calm": "inner calm meditation, nervous system regulation, guided meditation for inner peace, techniques for emotional balance, meditation for purpose and fulfillment",
   "manifest-dreams": "manifest your dreams meditation, manifestation techniques, guided manifestation, law of attraction meditation, manifest abundance, create your desired reality, visualization for manifestation, quantum manifestation, how to manifest what you want, manifest wealth, manifest health",
-  "teenage-anti-bullying": "anti-bullying meditation for teens, teen resilience meditation, how to deal with bullying, teen anxiety relief, free meditation for bullied teenagers, confidence for teenagers, teen emotional support, bullying coping strategies, teen self-esteem hypnosis"
+  "teenage-anti-bullying": "anti-bullying meditation for teens, teen resilience meditation, how to deal with bullying, teen anxiety relief, free meditation for bullied teenagers, confidence for teenagers, teen emotional support, bullying coping strategies, teen self-esteem hypnosis, Netflix Adolescence series, adolescent mental health, teenage struggles in media"
 };
 
 // Update categoryDescriptions - ENHANCED DESCRIPTIONS
@@ -256,8 +256,35 @@ export const categoryDescriptions: Record<Category, string> = {
   "personal-growth": "Manifest your dreams and visualize your ideal future self with our guided meditation recordings for personal growth, abundance, and positive change.",
   "inner-calm": "Find inner calm and peace with our guided meditations designed to help you transition from surviving to thriving and unlock your full potential.",
   "manifest-dreams": "Free guided meditations to help you effectively manifest your deepest desires, attract abundance, and create your dream reality using proven visualization and law of attraction techniques.",
-  "teenage-anti-bullying": "Free supportive guided meditations specifically designed for teenagers to build resilience against bullying, boost confidence, and develop effective emotional coping strategies."
+  "teenage-anti-bullying": "Free supportive guided meditations for teenagers dealing with bullying, addressing themes similar to those explored in Netflix's 'Adolescence' series. Build resilience, boost confidence, and develop effective emotional coping strategies."
 };
+
+// Update the teen anti-bullying recording
+const updatedRecordings = [...recordings];
+// Find and update the main teen anti-bullying recording
+const teenBullyingIndex = updatedRecordings.findIndex(r => r.id === "20");
+if (teenBullyingIndex !== -1) {
+  updatedRecordings[teenBullyingIndex] = {
+    ...updatedRecordings[teenBullyingIndex],
+    description: "Free guided meditation for teenagers experiencing bullying, addressing similar themes to Netflix's 'Adolescence' series. This powerful hypnosis session helps teens build mental and emotional resilience, increase self-confidence, and develop practical coping strategies for difficult social situations.",
+    keywords: [
+      "teen resilience meditation", 
+      "anti-bullying for teenagers", 
+      "confidence building for teens", 
+      "teenage mental strength", 
+      "bullying support", 
+      "teen self-esteem", 
+      "how to deal with bullying", 
+      "hypnosis for bullied teens",
+      "Netflix Adolescence series",
+      "teen mental health in media",
+      "coping with adolescent struggles"
+    ]
+  };
+}
+
+// Overwrite the recordings array with our updated version
+export const recordings = updatedRecordings;
 
 export const getFeaturedRecordings = (): Recording[] => {
   return recordings.filter(recording => recording.featured);

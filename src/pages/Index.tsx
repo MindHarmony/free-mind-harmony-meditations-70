@@ -38,9 +38,9 @@ const Index = () => {
     "twitter:description": "Free guided meditation for manifestation and abundance using the law of attraction",
   } : activeCategory === "teenage-anti-bullying" ? {
     "og:title": "Teen Anti-Bullying Guided Meditation | Mind Harmony",
-    "og:description": "Free supportive guided meditation for teenagers facing bullying, designed to build resilience and confidence.",
+    "og:description": "Free supportive guided meditation for teenagers facing bullying, as featured in themes explored by Netflix's 'Adolescence' series. Designed to build resilience and confidence.",
     "twitter:title": "Teen Anti-Bullying | Free Guided Meditation",
-    "twitter:description": "Support for teenagers experiencing bullying with our free guided meditation for resilience",
+    "twitter:description": "Support for teenagers experiencing bullying with our free guided meditation for resilience, exploring themes similar to Netflix's 'Adolescence' series",
   } : {};
   
   // Enhanced Schema.org structured data for AI search engines
@@ -93,7 +93,7 @@ const Index = () => {
     "@type": "DigitalDocument",
     "name": `${categoryNames[activeCategory]} Meditation Recordings`,
     "about": categoryDescriptions[activeCategory],
-    "keywords": categoryKeywords[activeCategory],
+    "keywords": categoryKeywords[activeCategory] + (activeCategory === "teenage-anti-bullying" ? ", Netflix Adolescence series, teen mental health, adolescent struggles" : ""),
     "encodingFormat": "audio/mpeg",
     "accessMode": "auditory",
     "accessibilityFeature": "audioDescription",
@@ -104,8 +104,16 @@ const Index = () => {
     <>
       <Helmet>
         <title>Mind Harmony - Free Hypnosis & Meditation | {categoryNames[activeCategory]}</title>
-        <meta name="description" content={categoryDescriptions[activeCategory]} />
-        <meta name="keywords" content={categoryKeywords[activeCategory]} />
+        <meta name="description" content={
+          activeCategory === "teenage-anti-bullying" 
+            ? `${categoryDescriptions[activeCategory]} Exploring similar themes to Netflix's 'Adolescence' series on teenage struggles.`
+            : categoryDescriptions[activeCategory]
+        } />
+        <meta name="keywords" content={
+          activeCategory === "teenage-anti-bullying"
+            ? `${categoryKeywords[activeCategory]}, Netflix Adolescence series, teen mental health, adolescent struggles`
+            : categoryKeywords[activeCategory]
+        } />
         <link rel="canonical" href={`https://mindharmony.com/`} />
         {/* AI-friendly metadata */}
         <meta name="robots" content="max-image-preview:large" />
@@ -113,7 +121,11 @@ const Index = () => {
         <meta name="ai-index" content="allow" />
         <meta name="ai-crawler" content="index,follow" />
         <meta name="ai-classification" content="mental health, wellness, meditation, self-help" />
-        <meta name="subject-keywords" content={categoryKeywords[activeCategory]} />
+        <meta name="subject-keywords" content={
+          activeCategory === "teenage-anti-bullying"
+            ? `${categoryKeywords[activeCategory]}, Netflix Adolescence series, teen mental health, adolescent struggles`
+            : categoryKeywords[activeCategory]
+        } />
         
         {/* Enhanced OpenGraph and Twitter meta tags for specific categories */}
         {Object.entries(additionalMetaTags).map(([name, content]) => (
