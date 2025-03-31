@@ -30,8 +30,8 @@ export const categoryNames: Record<Category, string> = {
   "teenage-anti-bullying": "Teenage Anti-Bullying"
 };
 
-// Sample recordings data
-export const recordings: Recording[] = [
+// Define initial recordings data
+const initialRecordings: Recording[] = [
   // First set of recordings for stress-anxiety
   {
     id: "1",
@@ -259,32 +259,32 @@ export const categoryDescriptions: Record<Category, string> = {
   "teenage-anti-bullying": "Free supportive guided meditations for teenagers dealing with bullying, addressing themes similar to those explored in Netflix's 'Adolescence' series. Build resilience, boost confidence, and develop effective emotional coping strategies."
 };
 
-// Update the teen anti-bullying recording
-const updatedRecordings = [...recordings];
-// Find and update the main teen anti-bullying recording
-const teenBullyingIndex = updatedRecordings.findIndex(r => r.id === "20");
-if (teenBullyingIndex !== -1) {
-  updatedRecordings[teenBullyingIndex] = {
-    ...updatedRecordings[teenBullyingIndex],
-    description: "Free guided meditation for teenagers experiencing bullying, addressing similar themes to Netflix's 'Adolescence' series. This powerful hypnosis session helps teens build mental and emotional resilience, increase self-confidence, and develop practical coping strategies for difficult social situations.",
-    keywords: [
-      "teen resilience meditation", 
-      "anti-bullying for teenagers", 
-      "confidence building for teens", 
-      "teenage mental strength", 
-      "bullying support", 
-      "teen self-esteem", 
-      "how to deal with bullying", 
-      "hypnosis for bullied teens",
-      "Netflix Adolescence series",
-      "teen mental health in media",
-      "coping with adolescent struggles"
-    ]
-  };
-}
+// Create a copy of the recordings and apply Netflix Adolescence series updates
+const updatedTeenBullyingRecordings = initialRecordings.map(recording => {
+  if (recording.id === "20") {
+    return {
+      ...recording,
+      description: "Free guided meditation for teenagers experiencing bullying, addressing similar themes to Netflix's 'Adolescence' series. This powerful hypnosis session helps teens build mental and emotional resilience, increase self-confidence, and develop practical coping strategies for difficult social situations.",
+      keywords: [
+        "teen resilience meditation", 
+        "anti-bullying for teenagers", 
+        "confidence building for teens", 
+        "teenage mental strength", 
+        "bullying support", 
+        "teen self-esteem", 
+        "how to deal with bullying", 
+        "hypnosis for bullied teens",
+        "Netflix Adolescence series",
+        "teen mental health in media",
+        "coping with adolescent struggles"
+      ]
+    };
+  }
+  return recording;
+});
 
-// Overwrite the recordings array with our updated version
-export const recordings = updatedRecordings;
+// Export the SINGLE recordings array
+export const recordings = updatedTeenBullyingRecordings;
 
 export const getFeaturedRecordings = (): Recording[] => {
   return recordings.filter(recording => recording.featured);
