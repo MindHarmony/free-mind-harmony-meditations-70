@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { AudioPlayer } from "./AudioPlayer";
 import { Recording, getRecordingsByCategory, Category } from "@/data/recordings";
@@ -72,22 +71,7 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
               </div>
               <p className="text-calm-600 mt-2 text-left" itemProp="description">{recording.description}</p>
               
-              {/* Netflix Adolescence Series Reference for Anti-Bullying Category */}
-              {category === "teenage-anti-bullying" && (
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
-                  <div className="flex items-start">
-                    <Info className="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-medium text-blue-800 text-left">Relevant to Netflix's "Adolescence" Series</h3>
-                      <p className="text-blue-700 text-sm mt-1">
-                        This meditation explores similar themes to Netflix's "Adolescence" series, helping teens navigate the 
-                        complex social and emotional challenges portrayed in the show. Perfect for young people seeking 
-                        support with issues highlighted in the series.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              )}
+              {/* Removed the Netflix Adolescence Series Reference for Anti-Bullying Category */}
               
               {/* Keywords for SEO - hidden visually but available for search engines */}
               {recording.keywords && (
