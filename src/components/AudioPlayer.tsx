@@ -25,6 +25,53 @@ export const AudioPlayer = ({ recording, isCompact = false }: AudioPlayerProps) 
   
   // If this is a SoundCloud embed, render it differently
   if (recording.embedType === "soundcloud" && recording.embedSrc) {
+    // For the Sleep & Insomnia recording (id 7), use the complete embed code with artist info
+    if (recording.id === "7") {
+      return (
+        <div className={cn(
+          "audio-player w-full p-4",
+          isCompact ? "rounded-lg" : "rounded-xl"
+        )}>
+          <div className="mb-3">
+            <div className={cn(
+              "font-medium text-calm-900",
+              isCompact ? "text-sm" : "text-base"
+            )}>
+              {recording.title}
+            </div>
+            <div className="text-xs text-calm-500 mt-1">
+              {recording.duration}
+            </div>
+          </div>
+          
+          <div className="w-full">
+            <iframe 
+              width="100%" 
+              height="300" 
+              scrolling="no" 
+              frameBorder="no" 
+              allow="autoplay"
+              src={recording.embedSrc}
+              title={recording.title}
+            ></iframe>
+            <div style={{fontSize: "10px", color: "#cccccc", lineBreak: "anywhere", wordBreak: "normal", overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis", fontFamily: "Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif", fontWeight: 100}}>
+              <a href="https://soundcloud.com/carla-545924453" title="Carla" target="_blank" style={{color: "#cccccc", textDecoration: "none"}}>Carla</a> · <a href="https://soundcloud.com/carla-545924453/sleep-insomnia" title="Sleep &amp; Insomnia" target="_blank" style={{color: "#cccccc", textDecoration: "none"}}>Sleep &amp; Insomnia</a>
+            </div>
+          </div>
+          
+          {/* Add disclaimer notice below the player */}
+          <div className="mt-3 pt-3 border-t border-calm-100 flex items-start gap-2">
+            <AlertTriangle className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
+            <p className="text-xs text-calm-600">
+              Please do not listen while driving or operating machinery. Only use in a safe, relaxed environment. 
+              See full <Link to="/terms" className="text-trust-500 hover:underline">disclaimer here</Link>.
+            </p>
+          </div>
+        </div>
+      );
+    }
+    
+    // For other soundcloud embeds, use the standard format
     return (
       <div className={cn(
         "audio-player w-full p-4",
