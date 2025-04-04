@@ -1,4 +1,3 @@
-
 export type Recording = {
   id: string;
   title: string;
@@ -107,7 +106,7 @@ const initialRecordings: Recording[] = [
     category: "sleep",
     featured: true,
     embedType: "soundcloud",
-    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2070618100&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
+    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2070655640&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
     keywords: ["free sleep hypnosis for deep relaxation", "best sleep meditation for anxiety and stress", "sleep hypnosis", "insomnia relief", "fall asleep fast"]
   },
   {
