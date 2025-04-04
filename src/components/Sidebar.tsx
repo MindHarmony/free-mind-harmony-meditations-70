@@ -30,24 +30,19 @@ export const Sidebar = ({
 
   const categories: CategoryItem[] = [
     {
-      id: "stress-anxiety",
-      name: categoryNames["stress-anxiety"],
-      icon: <HeartPulse className="w-5 h-5" />
-    },
-    {
-      id: "confidence",
-      name: categoryNames["confidence"],
-      icon: <Star className="w-5 h-5" />
-    },
-    {
       id: "sleep",
       name: categoryNames["sleep"], 
       icon: <Moon className="w-5 h-5" />
     },
     {
-      id: "personal-growth",
-      name: categoryNames["personal-growth"],
-      icon: <User className="w-5 h-5" />
+      id: "manifest-dreams",
+      name: categoryNames["manifest-dreams"],
+      icon: <Star className="w-5 h-5" />
+    },
+    {
+      id: "stress-anxiety",
+      name: categoryNames["stress-anxiety"],
+      icon: <HeartPulse className="w-5 h-5" />
     },
     {
       id: "inner-calm",
@@ -55,9 +50,14 @@ export const Sidebar = ({
       icon: <Brain className="w-5 h-5" />
     },
     {
-      id: "manifest-dreams",
-      name: categoryNames["manifest-dreams"],
+      id: "confidence",
+      name: categoryNames["confidence"],
       icon: <Star className="w-5 h-5" />
+    },
+    {
+      id: "personal-growth",
+      name: categoryNames["personal-growth"],
+      icon: <User className="w-5 h-5" />
     },
     {
       id: "teenage-anti-bullying",
