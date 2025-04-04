@@ -1,7 +1,8 @@
+
 import { useState, useEffect } from "react";
 import { AudioPlayer } from "./AudioPlayer";
 import { Recording, getRecordingsByCategory, Category } from "@/data/recordings";
-import { Clock, AlertCircle, Copy, Check, Info } from "lucide-react";
+import { Clock, Copy, Check, Info } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
@@ -83,9 +84,8 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
                     ))}
                     {category === "teenage-anti-bullying" && (
                       <>
-                        <li>Netflix Adolescence series</li>
-                        <li>teen mental health in media</li>
-                        <li>adolescent struggles portrayed in Netflix</li>
+                        <li>teen mental health</li>
+                        <li>adolescent struggles</li>
                       </>
                     )}
                   </ul>
@@ -93,23 +93,8 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
               )}
             </div>
             
-            {/* Coming Soon Announcement for Sleep category only */}
-            {(category === "sleep") ? (
-              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-4">
-                <div className="flex items-start">
-                  <AlertCircle className="w-5 h-5 text-amber-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-medium text-amber-800 text-left">Coming Soon</h3>
-                    <p className="text-amber-700 text-sm mt-1">
-                      We're currently updating our Sleep & Insomnia recordings. 
-                      Please check back soon for new meditation content!
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <AudioPlayer recording={recording} />
-            )}
+            {/* Audio Player - Now directly showing for all categories including Sleep */}
+            <AudioPlayer recording={recording} />
             
             {/* Enhanced structured data for this audio content */}
             <script type="application/ld+json">
@@ -117,11 +102,11 @@ export const CategoryContent = ({ category }: CategoryContentProps) => {
                 "@context": "https://schema.org",
                 "@type": "AudioObject",
                 "name": recording.title,
-                "description": recording.description + (category === "teenage-anti-bullying" ? " Relevant to themes explored in Netflix's 'Adolescence' series." : ""),
+                "description": recording.description,
                 "duration": recording.duration,
                 "contentUrl": recording.audioSrc,
                 "encodingFormat": "audio/mpeg",
-                "keywords": recording.keywords?.join(", ") + (category === "teenage-anti-bullying" ? ", Netflix Adolescence series, teen mental health" : ""),
+                "keywords": recording.keywords?.join(", "),
                 "potentialAction": {
                   "@type": "ListenAction",
                   "target": {

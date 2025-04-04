@@ -1,3 +1,4 @@
+
 export type Recording = {
   id: string;
   title: string;
@@ -96,16 +97,18 @@ const initialRecordings: Recording[] = [
     keywords: ["free hypnosis to boost confidence and motivation", "hypnosis to overcome self-doubt and fear", "inner strength meditation"]
   },
 
-  // Sleep category recordings
+  // Sleep category recordings - UPDATED WITH NEW SLEEP MEDITATION
   {
     id: "7",
     title: "Deep Sleep Meditation",
-    description: "Free sleep hypnosis for deep relaxation. Fall asleep quickly and enjoy restful sleep all night with this best sleep meditation for anxiety and stress.",
-    duration: "30:10",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-forest-treasure-138.mp3", // Updated to a more reliable source
+    description: "Free sleep hypnosis for deep relaxation. Fall asleep quickly and enjoy restful sleep all night with this calming, gentle sleep meditation for anxiety and insomnia.",
+    duration: "25:12",
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-forest-treasure-138.mp3", // Fallback audio
     category: "sleep",
     featured: true,
-    keywords: ["free sleep hypnosis for deep relaxation", "best sleep meditation for anxiety and stress", "sleep hypnosis"]
+    embedType: "soundcloud",
+    embedSrc: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2070618100&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false",
+    keywords: ["free sleep hypnosis for deep relaxation", "best sleep meditation for anxiety and stress", "sleep hypnosis", "insomnia relief", "fall asleep fast"]
   },
   {
     id: "8",
@@ -121,7 +124,7 @@ const initialRecordings: Recording[] = [
     title: "Peaceful Night's Rest",
     description: "10-minute guided meditation for falling asleep fast. Release the day's tension and prepare your mind and body for rejuvenating sleep regardless of anxiety levels.",
     duration: "25:15",
-    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-blurry-future-120.mp3", // Updated to a more reliable source
+    audioSrc: "https://assets.mixkit.co/music/preview/mixkit-blurry-future-120.mp3",
     category: "sleep",
     keywords: ["10-minute guided meditation for falling asleep fast", "quick sleep meditation", "bedtime relaxation"]
   },
@@ -172,7 +175,7 @@ const initialRecordings: Recording[] = [
     keywords: ["nervous system regulation", "meditation for regulation", "surviving to thriving", "purpose and fulfillment"]
   },
   
-  // Manifest dreams category recordings - ENHANCED DESCRIPTIONS
+  // Manifest dreams category recordings
   {
     id: "17",
     title: "Manifest Your Dreams",
@@ -204,7 +207,7 @@ const initialRecordings: Recording[] = [
     keywords: ["quantum manifestation", "reality creation meditation", "conscious creation", "manifestation techniques"]
   },
   
-  // Teenage Anti-Bullying category recordings - ENHANCED DESCRIPTIONS
+  // Teenage Anti-Bullying category recordings
   {
     id: "20",
     title: "Building Teen Resilience",
@@ -245,7 +248,7 @@ export const categoryKeywords: Record<Category, string> = {
   "personal-growth": "guided visualization meditation to manifest success, hypnosis for manifesting your dream life, law of attraction meditation for abundance and confidence, visualization exercise to attract positivity and wealth, future self meditation for personal growth and clarity",
   "inner-calm": "inner calm meditation, nervous system regulation, guided meditation for inner peace, techniques for emotional balance, meditation for purpose and fulfillment",
   "manifest-dreams": "manifest your dreams meditation, manifestation techniques, guided manifestation, law of attraction meditation, manifest abundance, create your desired reality, visualization for manifestation, quantum manifestation, how to manifest what you want, manifest wealth, manifest health",
-  "teenage-anti-bullying": "anti-bullying meditation for teens, teen resilience meditation, how to deal with bullying, teen anxiety relief, free meditation for bullied teenagers, confidence for teenagers, teen emotional support, bullying coping strategies, teen self-esteem hypnosis, Netflix Adolescence series, adolescent mental health, teenage struggles in media"
+  "teenage-anti-bullying": "anti-bullying meditation for teens, teen resilience meditation, how to deal with bullying, teen anxiety relief, free meditation for bullied teenagers, confidence for teenagers, teen emotional support, bullying coping strategies, teen self-esteem hypnosis, adolescent mental health, teenage struggles"
 };
 
 // Update categoryDescriptions - ENHANCED DESCRIPTIONS
@@ -256,15 +259,15 @@ export const categoryDescriptions: Record<Category, string> = {
   "personal-growth": "Manifest your dreams and visualize your ideal future self with our guided meditation recordings for personal growth, abundance, and positive change.",
   "inner-calm": "Find inner calm and peace with our guided meditations designed to help you transition from surviving to thriving and unlock your full potential.",
   "manifest-dreams": "Free guided meditations to help you effectively manifest your deepest desires, attract abundance, and create your dream reality using proven visualization and law of attraction techniques.",
-  "teenage-anti-bullying": "Free supportive guided meditations for teenagers dealing with bullying, addressing themes similar to those explored in Netflix's 'Adolescence' series. Build resilience, boost confidence, and develop effective emotional coping strategies."
+  "teenage-anti-bullying": "Free supportive guided meditations for teenagers dealing with bullying. Build resilience, boost confidence, and develop effective emotional coping strategies."
 };
 
-// Create a copy of the recordings and apply Netflix Adolescence series updates
+// Create a copy of the recordings and apply any specific updates needed
 const updatedTeenBullyingRecordings = initialRecordings.map(recording => {
   if (recording.id === "20") {
     return {
       ...recording,
-      description: "Free guided meditation for teenagers experiencing bullying, addressing similar themes to Netflix's 'Adolescence' series. This powerful hypnosis session helps teens build mental and emotional resilience, increase self-confidence, and develop practical coping strategies for difficult social situations.",
+      description: "Free guided meditation for teenagers experiencing bullying. This powerful hypnosis session helps teens build mental and emotional resilience, increase self-confidence, and develop practical coping strategies for difficult social situations.",
       keywords: [
         "teen resilience meditation", 
         "anti-bullying for teenagers", 
@@ -274,8 +277,7 @@ const updatedTeenBullyingRecordings = initialRecordings.map(recording => {
         "teen self-esteem", 
         "how to deal with bullying", 
         "hypnosis for bullied teens",
-        "Netflix Adolescence series",
-        "teen mental health in media",
+        "teen mental health",
         "coping with adolescent struggles"
       ]
     };
