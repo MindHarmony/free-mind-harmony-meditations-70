@@ -35,11 +35,6 @@ export const Sidebar = ({
       icon: <Moon className="w-5 h-5" />
     },
     {
-      id: "manifest-dreams",
-      name: categoryNames["manifest-dreams"],
-      icon: <Star className="w-5 h-5" />
-    },
-    {
       id: "stress-anxiety",
       name: categoryNames["stress-anxiety"],
       icon: <HeartPulse className="w-5 h-5" />
@@ -52,6 +47,11 @@ export const Sidebar = ({
     {
       id: "confidence",
       name: categoryNames["confidence"],
+      icon: <Star className="w-5 h-5" />
+    },
+    {
+      id: "manifest-dreams",
+      name: categoryNames["manifest-dreams"],
       icon: <Star className="w-5 h-5" />
     },
     {
