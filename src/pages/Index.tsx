@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -165,7 +164,7 @@ const Index = () => {
               </Breadcrumb>
               
               <h1 className="text-2xl md:text-3xl font-semibold text-calm-900">
-                {categoryNames[activeCategory]} Hypnosis & Meditation
+                Mind Harmony - Free {categoryNames[activeCategory]} Hypnosis & Meditation
               </h1>
               <p className="text-sm md:text-base text-calm-600 mt-2">
                 Free {categoryNames[activeCategory].toLowerCase()} recording to help you achieve mental balance and harmony. 
@@ -173,16 +172,10 @@ const Index = () => {
               </p>
             </header>
 
-            {/* Ad Space removed temporarily */}
-            
-            {/* Category Content - Main */}
             <main>
               <CategoryContent category={activeCategory} />
-              
-              {/* Ad Space removed temporarily */}
             </main>
 
-            {/* Footer */}
             <footer className="mt-6 md:mt-10 pt-4 md:pt-6 border-t border-calm-100 text-center text-xs md:text-sm text-calm-500">
               <p>© {new Date().getFullYear()} Mind Harmony. All rights reserved.</p>
               <p className="mt-1 mb-3">Free hypnosis recordings for personal development.</p>
